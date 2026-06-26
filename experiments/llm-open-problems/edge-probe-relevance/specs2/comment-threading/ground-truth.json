@@ -1,0 +1,31 @@
+[
+  {
+    "id": "R1",
+    "text": "Let users reply to comments and show replies nested under the parent",
+    "applicable": [
+      "ordering",
+      "empty",
+      "boundary"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "maximum nesting depth / deep recursion",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      },
+      {
+        "category": "ordering",
+        "why": "order of sibling replies",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

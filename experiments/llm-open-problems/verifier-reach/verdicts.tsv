@@ -1,0 +1,37 @@
+id	model	verdict	confidence	caught_edge	note
+01-ref	opus	gaps_found	0.62	0	FP: flagged banker's/EPS via 1.005 — spec silent on ties
+01-ref	sonnet	passed	0.82	0	correct pass
+01-ref	haiku	gaps_found	0.92	0	FP: flagged banker's as non-standard rounding
+01-inf-neg	opus	gaps_found	0.83	1	named MH3 negatives use Math.ceil
+01-inf-neg	sonnet	passed	0.82	0	MISS
+01-inf-neg	haiku	gaps_found	0.92	1	named MH3 negative asymmetry
+01-inf-dp	opus	gaps_found	0.83	1	named MH2 dp>2 cap
+01-inf-dp	sonnet	gaps_found	0.97	1	named MH2 dp clamp
+01-inf-dp	haiku	gaps_found	0.95	1	named MH2 dp clamp
+01-noninf-tie	opus	passed	0.85	0	MISS (expected blind spot)
+01-noninf-tie	sonnet	passed	0.91	0	MISS (expected blind spot)
+01-noninf-tie	haiku	passed	0.98	0	MISS (expected blind spot)
+02-ref	opus	passed	0.92	0	correct pass
+02-ref	sonnet	passed	0.97	0	correct pass
+02-ref	haiku	passed	0.98	0	correct pass
+02-inf-nosort	opus	gaps_found	0.97	1	named MH2 no sort
+02-inf-nosort	sonnet	gaps_found	0.97	1	named MH2 no sort
+02-inf-nosort	haiku	gaps_found	0.95	1	named MH2 no sort
+02-inf-mutate	opus	passed	0.83	0	MISS aliasing not noticed
+02-inf-mutate	sonnet	gaps_found	0.92	1	named MH5 input mutation
+02-inf-mutate	haiku	gaps_found	0.95	1	named MH5 input mutation
+02-noninf-touching	opus	gaps_found	0.93	1	caught via <= convention (not purely non-inferable)
+02-noninf-touching	sonnet	gaps_found	0.92	1	caught via convention; hedged on definition
+02-noninf-touching	haiku	gaps_found	0.92	1	caught via convention; hedged on definition
+03-ref	opus	gaps_found	0.93	0	FP: argued spec means code units, flagged grapheme
+03-ref	sonnet	gaps_found	0.85	0	FP: null-coercion nitpick (?? '' vs 'null')
+03-ref	haiku	passed	0.98	0	correct pass
+03-inf-nocoerce	opus	gaps_found	0.93	1	named MH4 non-string throws
+03-inf-nocoerce	sonnet	gaps_found	0.92	1	named MH4 non-string throws
+03-inf-nocoerce	haiku	gaps_found	0.95	1	named MH4 non-string not coerced
+03-inf-empty	opus	gaps_found	0.97	1	named MH2/MH1 empty returns null
+03-inf-empty	sonnet	gaps_found	0.97	1	named MH1/MH2 empty returns null
+03-inf-empty	haiku	gaps_found	0.98	1	named MH2 empty returns null
+03-noninf-grapheme	opus	gaps_found	0.83	0	gaps_found but MISSED grapheme edge (flagged negative-max)
+03-noninf-grapheme	sonnet	gaps_found	0.85	0	gaps_found but MISSED grapheme edge (flagged null-coercion)
+03-noninf-grapheme	haiku	gaps_found	0.95	0	gaps_found but MISSED grapheme edge (flagged null-coercion)

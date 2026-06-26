@@ -1,0 +1,28 @@
+{
+  "slug": "csv-export",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["collection", "text", "io"],
+      "applicable_categories": ["empty", "ordering", "encoding", "concurrency"],
+      "edges": [
+        {
+          "category": "empty",
+          "candidate": "Export when the table has zero records: does the file contain only the header row, an empty file, or is the download suppressed? Also single-record export and a record whose every field is null/empty."
+        },
+        {
+          "category": "ordering",
+          "candidate": "When no sort is specified or multiple records share the same sort-key value, is the row order in the CSV deterministic and stable across repeated exports, or arbitrary (e.g. DB insertion vs. current view order)?"
+        },
+        {
+          "category": "encoding",
+          "candidate": "A field value contains the delimiter (comma), a double-quote, a newline/CRLF, a leading '=' or '+' (CSV injection), or non-ASCII/multibyte characters (e.g. é, emoji): is it RFC-4180 quoted/escaped, what character encoding is written, and is a UTF-8 BOM emitted so Excel opens it correctly?"
+        },
+        {
+          "category": "concurrency",
+          "candidate": "Records are inserted, updated, or deleted while the export is being generated/streamed: is the snapshot consistent (point-in-time) or can the CSV contain torn/partial rows or duplicates? Also two concurrent exports by the same user writing to the same temp/download target."
+        }
+      ]
+    }
+  ]
+}

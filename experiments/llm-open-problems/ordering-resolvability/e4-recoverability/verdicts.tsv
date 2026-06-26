@@ -1,0 +1,46 @@
+requirement_id	model	predicted_class	note
+r05	haiku	sorted-by-field	"ranked by relevance" specifies sorting by a score/metric
+r06	haiku	chronological	"in the order they occurred" explicitly states temporal ordering
+r07	haiku	stable-input	"preserving input order" requires maintaining original sequence
+r08	haiku	sorted-by-field	"top 10 by upvotes" sorts by numeric magnitude descending
+r09	haiku	UNSTATED	deduplication does not specify order of remaining items
+r10	haiku	UNSTATED	collection of errors has no stated ordering constraint
+r11	haiku	UNSTATED	grouping by key does not imply output order of groups
+r13	haiku	sorted-by-field	"sorted list" implies ordering by value
+r15	haiku	UNSTATED	directory listing order is not specified
+r17	haiku	nondeterministic	"shuffle order" explicitly randomizes
+r18	haiku	sorted-by-field	"alphabetically" specifies lexicographic ordering
+r19	haiku	sorted-by-field	histogram bucket counts ordered by bucket index
+r21	haiku	UNSTATED	leaderboard suggests ranking but statement does not specify
+r23	haiku	sequence-significant	"path from A to B" implies meaningful traversal sequence
+r24	haiku	UNSTATED	string output; order not specified
+r05	sonnet	sorted-by-field	"ranked by relevance" explicitly orders by relevance score
+r06	sonnet	chronological	"in the order they occurred" is explicit time/event order
+r07	sonnet	stable-input	"preserving input order" is explicit
+r08	sonnet	sorted-by-field	"top 10 by upvotes" orders by upvote count descending
+r09	sonnet	UNSTATED	dedup goal stated but no output order specified
+r10	sonnet	UNSTATED	accumulation implied but no explicit order stated
+r11	sonnet	UNSTATED	grouping into a Map; no order among groups specified
+r13	sonnet	sorted-by-field	merging into one sorted list — ordered by sort field
+r15	sonnet	UNSTATED	no ordering criterion given for directory listing
+r17	sonnet	nondeterministic	"shuffle order" is explicit randomisation
+r18	sonnet	sorted-by-field	"alphabetically" explicitly orders by alphabetical field
+r19	sonnet	sorted-by-field	histogram buckets ordered by bucket index/range
+r21	sonnet	sorted-by-field	a leaderboard is ordered by rank/score by definition
+r23	sonnet	sequence-significant	a path from A to B is a meaningful traversal sequence
+r24	sonnet	UNSTATED	tags as comma-separated string; no order specified
+r05	opus	sorted-by-field	"ranked by relevance" names an explicit ordering field
+r06	opus	chronological	"in the order they occurred" is explicit time order
+r07	opus	stable-input	"preserving input order" stated directly
+r08	opus	sorted-by-field	"top 10 by upvotes" orders by upvotes descending
+r09	opus	UNSTATED	dedup of emails names no output order
+r10	opus	UNSTATED	collection implied but no order stated; ambiguous
+r11	opus	UNSTATED	grouping into a map names no order over groups
+r13	opus	sorted-by-field	result is "one sorted list" — ordered by value
+r15	opus	UNSTATED	listing files names no specific order
+r17	opus	nondeterministic	"shuffle order" is randomized by design
+r18	opus	sorted-by-field	"alphabetically" is an explicit ordering
+r19	opus	sorted-by-field	histogram bucket counts ordered by bucket index
+r21	opus	sorted-by-field	a leaderboard is inherently ranked by score
+r23	opus	sequence-significant	"path of nodes from A to B" is a meaningful traversal sequence
+r24	opus	UNSTATED	tags joined to a string with no stated order

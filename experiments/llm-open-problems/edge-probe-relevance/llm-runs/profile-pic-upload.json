@@ -1,0 +1,47 @@
+{
+  "slug": "profile-pic-upload",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["io", "text", "numeric-range"],
+      "applicable_categories": ["boundary", "precision", "encoding", "empty", "concurrency"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "A file whose size is exactly at the max upload limit (e.g. exactly 5 MB), one byte under, and one byte over — is the boundary inclusive or exclusive, and which side is accepted?"
+        },
+        {
+          "category": "precision",
+          "candidate": "A file larger than the size field can represent (e.g. >2 GB where a 32-bit length is used) or a declared Content-Length that overflows/disagrees with the actual byte stream — what is the contract when the size counter overflows or mismatches?"
+        },
+        {
+          "category": "encoding",
+          "candidate": "A filename containing multi-byte Unicode, combining/grapheme clusters, or differing normalization forms (NFC vs NFD), plus format detection by magic bytes vs extension (a .png that is actually a JPEG or a polyglot) — whose definition of 'image' and 'name length' governs acceptance?"
+        },
+        {
+          "category": "empty",
+          "candidate": "A zero-byte file, a truncated/0x0-pixel image, or a request with the file field present but null — what is the result for empty/degenerate upload input?"
+        },
+        {
+          "category": "concurrency",
+          "candidate": "An upload interrupted mid-stream (dropped connection) or two uploads of the profile-picture field submitted in parallel — is a partial upload guaranteed to be discarded and is the final state well-defined?"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "shapes": ["stateful", "io"],
+      "applicable_categories": ["idempotency", "concurrency"],
+      "edges": [
+        {
+          "category": "idempotency",
+          "candidate": "The same user saves a profile picture twice (re-upload of the identical image, or resubmit of the same save request) — does it replace the existing picture cleanly, or create a duplicate stored object / stale orphan?"
+        },
+        {
+          "category": "concurrency",
+          "candidate": "Two saves for the same profile race, or the profile page is read while a new image is being written — is there a guarantee against showing a half-written image, a broken link, or a mix of old metadata with new bytes?"
+        }
+      ]
+    }
+  ]
+}

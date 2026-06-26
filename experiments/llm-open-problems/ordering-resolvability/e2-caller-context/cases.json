@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "purpose": "When downstream consumers exist, does how they USE the output disambiguate whether order matters? Each case pairs a producer requirement with a real caller snippet and the ground-truth verdict.",
+    "verdict_values": ["matters", "irrelevant"],
+    "fields": { "id": "", "statement": "producer requirement", "caller": "consumer code snippet", "verdict": "GROUND TRUTH: does output order matter given this caller?" }
+  },
+  "cases": [
+    { "id": "c01", "statement": "Return the matching records.", "caller": "const first = results[0]; render(first);", "verdict": "matters", "why": "positional index [0] => caller depends on order" },
+    { "id": "c02", "statement": "Return the matching records.", "caller": "const ids = new Set(results.map(r => r.id)); return ids.has(target);", "verdict": "irrelevant", "why": "collapsed into a Set + membership test" },
+    { "id": "c03", "statement": "Return the tags.", "caller": "const sorted = [...tags].sort(); display(sorted);", "verdict": "irrelevant", "why": "caller re-sorts before use" },
+    { "id": "c04", "statement": "Return the events.", "caller": "assert.deepEqual(events, expectedEventsInOrder);", "verdict": "matters", "why": "sequence equality assertion" },
+    { "id": "c05", "statement": "Return the line items.", "caller": "const total = items.reduce((a, b) => a + b.price, 0);", "verdict": "irrelevant", "why": "order-agnostic fold (sum)" },
+    { "id": "c06", "statement": "Return the steps.", "caller": "for (const s of steps) { await run(s); }", "verdict": "matters", "why": "sequential side-effecting execution" },
+    { "id": "c07", "statement": "Return the users.", "caller": "const set = new Set(users); return set.size;", "verdict": "irrelevant", "why": "count via Set; order unused" },
+    { "id": "c08", "statement": "Return the rows.", "caller": "return rows.map(r => r.name).join(', ');", "verdict": "matters", "why": "join preserves & exposes order in output string" },
+    { "id": "c09", "statement": "Return the candidates.", "caller": "const best = candidates[candidates.length - 1];", "verdict": "matters", "why": "positional index (last)" },
+    { "id": "c10", "statement": "Return the flags.", "caller": "if (flags.includes('admin')) grant();", "verdict": "irrelevant", "why": "membership check only" },
+    { "id": "c11", "statement": "Return the records.", "caller": "const top = records.slice(0, 5); show(top);", "verdict": "matters", "why": "slice of the head depends on order" },
+    { "id": "c12", "statement": "Return the items.", "caller": "const byId = new Map(items.map(i => [i.id, i]));", "verdict": "irrelevant", "why": "re-keyed into a Map by id" }
+  ]
+}

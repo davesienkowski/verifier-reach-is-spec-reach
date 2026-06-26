@@ -1,0 +1,51 @@
+[
+  {
+    "id": "R1",
+    "text": "Let users search the list of products by name",
+    "applicable": [
+      "empty",
+      "encoding",
+      "ordering"
+    ],
+    "recall": [
+      {
+        "category": "empty",
+        "why": "no-results state",
+        "persona": {
+          "vibe": true,
+          "mid": false,
+          "senior": false
+        }
+      },
+      {
+        "category": "ordering",
+        "why": "stable / relevance ordering of results",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "R2",
+    "text": "Filter the results by category and price range",
+    "applicable": [
+      "boundary",
+      "empty",
+      "ordering"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "inclusive/exclusive price-range endpoints",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

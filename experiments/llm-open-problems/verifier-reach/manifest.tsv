@@ -1,0 +1,13 @@
+id	task	fn	category	class	must_have	defect_desc	expected_verifier
+01-ref	01-round-to	roundTo	-	clean	-	unmutated reference (banker's rounding)	pass
+01-inf-neg	01-round-to	roundTo	boundary	inferable	MH3 round to the nearer value	negatives use Math.ceil (toward zero), not nearest	catch
+01-inf-dp	01-round-to	roundTo	precision	inferable	MH2 round to dp decimals	silently caps dp at 2 (ignores dp>2)	catch
+01-noninf-tie	01-round-to	roundTo	adjacency	noninferable	(omitted) half-tie rule	Math.round = half-up on exact .5 ties	miss
+02-ref	02-merge-intervals	mergeIntervals	-	clean	-	unmutated reference (touching merges)	pass
+02-inf-nosort	02-merge-intervals	mergeIntervals	ordering	inferable	MH2 sorted by start	does not sort; wrong order on unsorted input	catch
+02-inf-mutate	02-merge-intervals	mergeIntervals	idempotency	inferable	MH5 do not mutate input	pushes input refs; mutates caller's pairs	catch
+02-noninf-touching	02-merge-intervals	mergeIntervals	adjacency	noninferable	(omitted) touching rule	strict < ; touching intervals stay split	miss
+03-ref	03-truncate	truncate	-	clean	-	unmutated reference (grapheme-safe)	pass
+03-inf-nocoerce	03-truncate	truncate	encoding	inferable	MH4 coerce non-string	no String() coercion; throws on number input	catch
+03-inf-empty	03-truncate	truncate	empty	inferable	MH2 <=max returns unchanged	returns null on empty string	catch
+03-noninf-grapheme	03-truncate	truncate	encoding	noninferable	(omitted) grapheme vs code unit	slices by UTF-16 code unit; splits emoji	miss

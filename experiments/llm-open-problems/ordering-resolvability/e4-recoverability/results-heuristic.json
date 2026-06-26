@@ -1,0 +1,120 @@
+{
+  "survivors": 15,
+  "inferable": {
+    "n": 8,
+    "hit": 6,
+    "pct": 75
+  },
+  "nonInferable": {
+    "n": 7,
+    "hit": 1,
+    "pct": 14.3
+  },
+  "rows": [
+    {
+      "id": "r05",
+      "inferable": true,
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "hit": 1
+    },
+    {
+      "id": "r06",
+      "inferable": true,
+      "pred": "chronological",
+      "truth": "sorted-by-field",
+      "hit": 0
+    },
+    {
+      "id": "r07",
+      "inferable": true,
+      "pred": "stable-input",
+      "truth": "stable-input",
+      "hit": 1
+    },
+    {
+      "id": "r08",
+      "inferable": true,
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "hit": 1
+    },
+    {
+      "id": "r09",
+      "inferable": false,
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "hit": 0
+    },
+    {
+      "id": "r10",
+      "inferable": false,
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "hit": 0
+    },
+    {
+      "id": "r11",
+      "inferable": false,
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "hit": 0
+    },
+    {
+      "id": "r13",
+      "inferable": false,
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "hit": 1
+    },
+    {
+      "id": "r15",
+      "inferable": false,
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "hit": 0
+    },
+    {
+      "id": "r17",
+      "inferable": true,
+      "pred": "nondeterministic",
+      "truth": "nondeterministic",
+      "hit": 1
+    },
+    {
+      "id": "r18",
+      "inferable": true,
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "hit": 1
+    },
+    {
+      "id": "r19",
+      "inferable": true,
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "hit": 0
+    },
+    {
+      "id": "r21",
+      "inferable": false,
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "hit": 0
+    },
+    {
+      "id": "r23",
+      "inferable": true,
+      "pred": "sequence-significant",
+      "truth": "sequence-significant",
+      "hit": 1
+    },
+    {
+      "id": "r24",
+      "inferable": false,
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "hit": 0
+    }
+  ]
+}

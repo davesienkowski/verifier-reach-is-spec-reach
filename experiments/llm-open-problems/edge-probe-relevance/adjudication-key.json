@@ -1,0 +1,90 @@
+{
+  "Q1": {
+    "rk": "bill-split/R1",
+    "cat": "adjacency",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q2": {
+    "rk": "bill-split/R1",
+    "cat": "ordering",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q3": {
+    "rk": "bill-split/R2",
+    "cat": "adjacency",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q4": {
+    "rk": "bill-split/R2",
+    "cat": "empty",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q5": {
+    "rk": "bill-split/R2",
+    "cat": "ordering",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q6": {
+    "rk": "profile-pic-upload/R1",
+    "cat": "concurrency",
+    "sources": [
+      "engine",
+      "sonnet"
+    ]
+  },
+  "Q7": {
+    "rk": "search-filter/R1",
+    "cat": "adjacency",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q8": {
+    "rk": "search-filter/R2",
+    "cat": "adjacency",
+    "sources": [
+      "engine",
+      "sonnet"
+    ]
+  },
+  "Q9": {
+    "rk": "search-filter/R2",
+    "cat": "precision",
+    "sources": [
+      "engine"
+    ]
+  },
+  "Q10": {
+    "rk": "pagination/R1",
+    "cat": "adjacency",
+    "sources": [
+      "engine",
+      "sonnet"
+    ]
+  },
+  "Q11": {
+    "rk": "csv-export/R1",
+    "cat": "concurrency",
+    "sources": [
+      "engine",
+      "sonnet"
+    ]
+  },
+  "Q12": {
+    "rk": "csv-export/R1",
+    "cat": "ordering",
+    "sources": [
+      "sonnet"
+    ]
+  }
+}

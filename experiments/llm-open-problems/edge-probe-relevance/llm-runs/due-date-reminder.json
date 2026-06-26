@@ -1,0 +1,28 @@
+{
+  "slug": "due-date-reminder",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["numeric-range", "stateful", "io"],
+      "applicable_categories": ["boundary", "precision", "idempotency", "concurrency"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "At the exact due timestamp (due_at == now): is the reminder sent at that instant, the tick before, or the tick after? Define behavior one unit either side of the threshold, and across a timezone/DST boundary where local 'due time' is ambiguous or skipped."
+        },
+        {
+          "category": "precision",
+          "candidate": "If the scheduler polls on an interval (e.g. every 60s) the due instant rarely coincides with a tick. What is the contract for the gap — fire on first tick at-or-after due_at, and what is the max acceptable lateness? Also specify clock/time-zone resolution and behavior under clock skew or backward NTP adjustment."
+        },
+        {
+          "category": "idempotency",
+          "candidate": "If the due-check runs twice over the same already-due task (re-poll, replay, manual re-trigger), the user must receive exactly one reminder, not a duplicate per pass — record a 'reminder_sent' marker so repetition is a no-op."
+        },
+        {
+          "category": "concurrency",
+          "candidate": "If two scheduler workers process the same due task in parallel, or a worker crashes after sending but before recording the sent-marker, what is guaranteed — at-least-once, at-most-once, or exactly-once delivery? Specify the locking/dedup contract for the send + mark-sent effect ordering."
+        }
+      ]
+    }
+  ]
+}

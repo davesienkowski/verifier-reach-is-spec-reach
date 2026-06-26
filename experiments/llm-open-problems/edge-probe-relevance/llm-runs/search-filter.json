@@ -1,0 +1,47 @@
+{
+  "slug": "search-filter",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["text", "collection"],
+      "applicable_categories": ["empty", "encoding", "ordering"],
+      "edges": [
+        {
+          "category": "empty",
+          "candidate": "Search query is empty/whitespace, or the product list itself is empty — does it return all products, no products, or an error?"
+        },
+        {
+          "category": "encoding",
+          "candidate": "Searching 'cafe' against a product named 'café' (and 'CAFÉ') — is matching case-insensitive and accent/diacritic- and Unicode-normalization-insensitive, or byte-exact?"
+        },
+        {
+          "category": "ordering",
+          "candidate": "When multiple products match the query equally well (e.g. two products both named exactly 'Widget'), is the result order specified and stable across repeated searches?"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "shapes": ["numeric-range", "collection"],
+      "applicable_categories": ["boundary", "precision", "empty", "ordering"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "A product priced exactly at the min and exactly at the max of the range — are the bounds inclusive or exclusive, and what about a price one cent below min / above max?"
+        },
+        {
+          "category": "precision",
+          "candidate": "Prices stored as floating point (e.g. 19.99) filtered against a range bound of 20.00 — is rounding/representation defined so 19.999... does not slip past the boundary?"
+        },
+        {
+          "category": "empty",
+          "candidate": "Category with no products, an inverted range (min > max), or no filters selected at all — does it return empty, all results, or an error?"
+        },
+        {
+          "category": "ordering",
+          "candidate": "Among products that pass both category and price filters, is the order of the filtered result set specified and stable?"
+        }
+      ]
+    }
+  ]
+}

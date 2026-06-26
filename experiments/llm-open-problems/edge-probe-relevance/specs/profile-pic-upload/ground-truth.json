@@ -1,0 +1,50 @@
+[
+  {
+    "id": "R1",
+    "text": "Let the user upload a profile picture file",
+    "applicable": [
+      "encoding",
+      "boundary",
+      "empty"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "max file size limit",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      },
+      {
+        "category": "encoding",
+        "why": "filename normalization / unicode / type sniffing",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "R2",
+    "text": "Save the uploaded image and show it on their profile page",
+    "applicable": [
+      "idempotency",
+      "concurrency"
+    ],
+    "recall": [
+      {
+        "category": "idempotency",
+        "why": "re-upload / double-submit replaces cleanly",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

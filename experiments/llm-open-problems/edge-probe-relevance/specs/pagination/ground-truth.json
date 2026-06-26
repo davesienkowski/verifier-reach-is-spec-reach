@@ -1,0 +1,31 @@
+[
+  {
+    "id": "R1",
+    "text": "Show the results in pages of twenty items each",
+    "applicable": [
+      "boundary",
+      "ordering",
+      "empty"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "requesting a page past the end",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      },
+      {
+        "category": "ordering",
+        "why": "stable order across page boundaries",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      }
+    ]
+  }
+]

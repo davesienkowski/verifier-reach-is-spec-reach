@@ -1,0 +1,427 @@
+{
+  "chancePct": 16.7,
+  "heuristic": {
+    "inferable": {
+      "n": 8,
+      "hit": 6,
+      "pct": 75
+    },
+    "nonInferable": {
+      "n": 7,
+      "hit": 1,
+      "pct": 14.3
+    }
+  },
+  "pooled": {
+    "inferable": {
+      "n": 24,
+      "hit": 21,
+      "pct": 87.5
+    },
+    "nonInferable": {
+      "n": 21,
+      "hit": 5,
+      "pct": 23.8
+    }
+  },
+  "perModel": {
+    "haiku": {
+      "inferable": {
+        "n": 8,
+        "hit": 7,
+        "pct": 87.5
+      },
+      "nonInferable": {
+        "n": 7,
+        "hit": 1,
+        "pct": 14.3
+      }
+    },
+    "sonnet": {
+      "inferable": {
+        "n": 8,
+        "hit": 7,
+        "pct": 87.5
+      },
+      "nonInferable": {
+        "n": 7,
+        "hit": 2,
+        "pct": 28.6
+      }
+    },
+    "opus": {
+      "inferable": {
+        "n": 8,
+        "hit": 7,
+        "pct": 87.5
+      },
+      "nonInferable": {
+        "n": 7,
+        "hit": 2,
+        "pct": 28.6
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "r05",
+      "model": "haiku",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "model": "haiku",
+      "pred": "chronological",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r07",
+      "model": "haiku",
+      "pred": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "model": "haiku",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "model": "haiku",
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "model": "haiku",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "model": "haiku",
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "model": "haiku",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "model": "haiku",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "model": "haiku",
+      "pred": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "model": "haiku",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "model": "haiku",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r21",
+      "model": "haiku",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r23",
+      "model": "haiku",
+      "pred": "sequence-significant",
+      "truth": "sequence-significant",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "model": "haiku",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "model": "sonnet",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "model": "sonnet",
+      "pred": "chronological",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r07",
+      "model": "sonnet",
+      "pred": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "model": "sonnet",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "model": "sonnet",
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "model": "sonnet",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "model": "sonnet",
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "model": "sonnet",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "model": "sonnet",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "model": "sonnet",
+      "pred": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "model": "sonnet",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "model": "sonnet",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r21",
+      "model": "sonnet",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r23",
+      "model": "sonnet",
+      "pred": "sequence-significant",
+      "truth": "sequence-significant",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "model": "sonnet",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "model": "opus",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "model": "opus",
+      "pred": "chronological",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r07",
+      "model": "opus",
+      "pred": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "model": "opus",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "model": "opus",
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "model": "opus",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "model": "opus",
+      "pred": "UNSTATED",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "model": "opus",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "model": "opus",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "model": "opus",
+      "pred": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "model": "opus",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "model": "opus",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r21",
+      "model": "opus",
+      "pred": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r23",
+      "model": "opus",
+      "pred": "sequence-significant",
+      "truth": "sequence-significant",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "model": "opus",
+      "pred": "UNSTATED",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    }
+  ]
+}

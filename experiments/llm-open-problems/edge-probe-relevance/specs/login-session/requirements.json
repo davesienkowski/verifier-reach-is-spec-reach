@@ -1,0 +1,10 @@
+[
+  {
+    "id": "R1",
+    "text": "Log the user in and keep them signed in until the session expires"
+  },
+  {
+    "id": "R2",
+    "text": "Let the user log out and end their session"
+  }
+]

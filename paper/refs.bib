@@ -1,0 +1,86 @@
+% Bibliography for "Verifier Reach Is Spec Reach"
+% All entries verified against the arXiv primary on 2026-06-26: title, author list,
+% year, and the specific fact cited in the paper were confirmed from the abstract page.
+
+@inproceedings{clarifygpt,
+  title     = {{ClarifyGPT}: Empowering {LLM}-based Code Generation with Intention Clarification},
+  author    = {Mu, Fangwen and Shi, Lin and Wang, Song and Yu, Zhuohao and Zhang, Binquan
+               and Wang, Chenxue and Liu, Shichao and Wang, Qing},
+  booktitle = {Proceedings of the ACM on Software Engineering (FSE)},
+  year      = {2024},
+  note      = {arXiv:2310.10996. Code-consistency ambiguity detection + clarifying questions;
+               GPT-4 70.96\%$\rightarrow$80.80\% on MBPP-sanitized.}
+}
+
+@misc{omissiondecay,
+  title        = {Omission Constraints Decay While Commission Constraints Persist in
+                  Long-Context {LLM} Agents},
+  author       = {Gamage, Yeran},
+  year         = {2026},
+  eprint       = {2604.20911},
+  archivePrefix= {arXiv},
+  note         = {Omission compliance 73\% (turn 5) $\rightarrow$ 33\% (turn 16) while commission
+                  holds at 100\% (Mistral Large 3, $p<10^{-33}$); 4{,}416 trials, 12 models, 8 providers.}
+}
+
+@misc{conformalabstention,
+  title        = {Mitigating {LLM} Hallucinations via Conformal Abstention},
+  author       = {Abbasi-Yadkori, Yasin and Kuzborskij, Ilja and Stutz, David and Gy{\"o}rgy, Andr{\'a}s
+                  and Fisch, Adam and Doucet, Arnaud and Beloshapka, Iuliya and Weng, Wei-Hung
+                  and Yang, Yao-Yuan and Szepesv{\'a}ri, Csaba and Cemgil, Ali Taylan and Tomasev, Nenad},
+  year         = {2024},
+  eprint       = {2405.01563},
+  archivePrefix= {arXiv},
+  note         = {Conformal-prediction abstention with theoretical guarantees on the hallucination rate.}
+}
+
+@misc{abstentionbench,
+  title        = {{AbstentionBench}: Reasoning {LLMs} Fail on Unanswerable Questions},
+  author       = {Kirichenko, Polina and Ibrahim, Mark and Chaudhuri, Kamalika and Bell, Samuel J.},
+  year         = {2025},
+  eprint       = {2506.09038},
+  archivePrefix= {arXiv},
+  note         = {Evaluating 20 frontier LLMs, ``abstention is an unsolved problem, and one where
+                  scaling models is of little use.''}
+}
+
+@misc{rethinkingverification,
+  title        = {Rethinking Verification for {LLM} Code Generation: From Generation to Testing},
+  author       = {Ma, Zihan and Zhang, Taolin and Cao, Maosong and Liu, Junnan and Zhang, Wenwei
+                  and Luo, Minnan and Zhang, Songyang and Chen, Kai},
+  year         = {2025},
+  eprint       = {2507.06920},
+  archivePrefix= {arXiv},
+  note         = {Limited/homogeneous test suites let subtle faults go undetected and inflate
+                  measured performance; proposes SAGA for more comprehensive test generation.}
+}
+
+@misc{llmjudgesurvey,
+  title        = {{LLM}-as-a-Judge for Software Engineering: Literature Review, Vision,
+                  and the Road Ahead},
+  author       = {He, Junda and Shi, Jieke and Zhuo, Terry Yue and Treude, Christoph and Sun, Jiamou
+                  and Xing, Zhenchang and Du, Xiaoning and Lo, David},
+  year         = {2025},
+  eprint       = {2510.24367},
+  archivePrefix= {arXiv},
+  note         = {Literature review of LLM-as-judge for evaluating software-engineering artifacts.}
+}
+
+@misc{safetychip,
+  title        = {Plug in the Safety Chip: Enforcing Constraints for {LLM}-driven Robot Agents},
+  author       = {Yang, Ziyi and Raman, Shreyas S. and Shah, Ankit and Tellex, Stefanie},
+  year         = {2023},
+  eprint       = {2309.09919},
+  archivePrefix= {arXiv},
+  note         = {A queryable linear-temporal-logic safety module: NL$\to$LTL encoding, violation
+                  reasoning, and unsafe-action pruning for LLM-driven agents.}
+}
+
+@book{myers2011art,
+  title     = {The Art of Software Testing},
+  author    = {Myers, Glenford J. and Sandler, Corey and Badgett, Tom},
+  edition   = {3rd},
+  publisher = {Wiley},
+  year      = {2011},
+  note      = {Boundary Value Analysis as a classical test-design technique.}
+}

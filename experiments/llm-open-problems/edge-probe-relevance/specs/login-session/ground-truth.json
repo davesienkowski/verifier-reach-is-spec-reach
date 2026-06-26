@@ -1,0 +1,50 @@
+[
+  {
+    "id": "R1",
+    "text": "Log the user in and keep them signed in until the session expires",
+    "applicable": [
+      "boundary",
+      "concurrency",
+      "idempotency"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "behavior exactly at the expiry instant",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      },
+      {
+        "category": "concurrency",
+        "why": "parallel logins / refresh race",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "R2",
+    "text": "Let the user log out and end their session",
+    "applicable": [
+      "idempotency",
+      "concurrency"
+    ],
+    "recall": [
+      {
+        "category": "idempotency",
+        "why": "double logout is a no-op",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "slug": "bill-split",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["numeric-range", "collection"],
+      "applicable_categories": ["boundary", "empty", "precision"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "What is each person's share when the number of people is exactly 1 (everyone owes the full total) versus the smallest valid group of 2?"
+        },
+        {
+          "category": "empty",
+          "candidate": "What happens when the number of people is 0 (division by zero) or the people collection is empty/null — does it error, or show nothing?"
+        },
+        {
+          "category": "precision",
+          "candidate": "When the total does not divide evenly (e.g. $10.00 / 3 = 3.333...), what is the contract for the non-terminating fractional share before any display rounding?"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "shapes": ["numeric-range"],
+      "applicable_categories": ["boundary", "precision"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "When a share lands exactly on the rounding threshold (e.g. 3.335), does it round half-up, half-down, or banker's rounding to 3.33 vs 3.34?"
+        },
+        {
+          "category": "precision",
+          "candidate": "After rounding each share to two decimals, the rounded shares may not sum back to the original total (the leftover/missing cent) — what is the contract for reconciling that residual cent?"
+        }
+      ]
+    }
+  ]
+}

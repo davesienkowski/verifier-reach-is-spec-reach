@@ -1,0 +1,31 @@
+[
+  {
+    "id": "R1",
+    "text": "Check whether a username is available as the user types",
+    "applicable": [
+      "encoding",
+      "empty",
+      "concurrency"
+    ],
+    "recall": [
+      {
+        "category": "encoding",
+        "why": "case-fold / unicode / homoglyph equivalence",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      },
+      {
+        "category": "concurrency",
+        "why": "two people register the same name at once (TOCTOU)",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

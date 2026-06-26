@@ -1,0 +1,32 @@
+[
+  {
+    "id": "R1",
+    "text": "Rank players by score and show the top 10",
+    "applicable": [
+      "ordering",
+      "empty",
+      "boundary",
+      "adjacency"
+    ],
+    "recall": [
+      {
+        "category": "ordering",
+        "why": "tie-break when scores are equal (stability)",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      },
+      {
+        "category": "boundary",
+        "why": "fewer than 10 players",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

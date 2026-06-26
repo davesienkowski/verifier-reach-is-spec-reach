@@ -1,0 +1,58 @@
+{
+  "runs": [
+    {
+      "slug": "discount-cart",
+      "requirements": [
+        {
+          "id": "R1",
+          "applicable_categories": ["boundary", "precision", "idempotency", "empty"]
+        }
+      ]
+    },
+    {
+      "slug": "username-availability",
+      "requirements": [
+        {
+          "id": "R1",
+          "applicable_categories": ["empty", "encoding", "concurrency"]
+        }
+      ]
+    },
+    {
+      "slug": "meeting-timezone",
+      "requirements": [
+        {
+          "id": "R1",
+          "applicable_categories": ["boundary", "encoding"]
+        }
+      ]
+    },
+    {
+      "slug": "leaderboard",
+      "requirements": [
+        {
+          "id": "R1",
+          "applicable_categories": ["boundary", "ordering", "adjacency", "empty"]
+        }
+      ]
+    },
+    {
+      "slug": "password-reset-expiry",
+      "requirements": [
+        {
+          "id": "R1",
+          "applicable_categories": ["boundary", "idempotency", "concurrency"]
+        }
+      ]
+    },
+    {
+      "slug": "comment-threading",
+      "requirements": [
+        {
+          "id": "R1",
+          "applicable_categories": ["empty", "adjacency", "ordering", "concurrency"]
+        }
+      ]
+    }
+  ]
+}

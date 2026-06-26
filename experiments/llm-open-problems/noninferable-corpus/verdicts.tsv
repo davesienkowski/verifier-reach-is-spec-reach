@@ -1,0 +1,13 @@
+task	noninferable_edge	model	rep	verdict	confidence	verdict_correct	caught_NI_edge	note
+01-round-to	half-to-even tie	opus	1	gaps_found	0.96	1	0	caught an UNINTENDED inferable FP bug (1.005->1.00), not the tie rule — task confounded
+01-round-to	half-to-even tie	opus	2	gaps_found	0.88	1	0	same FP bug, not the tie rule
+01-round-to	half-to-even tie	haiku	1	passed	0.92	0	0	missed all
+01-round-to	half-to-even tie	haiku	2	passed	0.92	0	0	missed all
+02-merge-intervals	touching merges	opus	1	passed	0.82	0	0	called strict-< defensible
+02-merge-intervals	touching merges	opus	2	passed	0.80	0	0	called strict-< defensible
+02-merge-intervals	touching merges	haiku	1	passed	0.99	0	0	traced visible, missed touching
+02-merge-intervals	touching merges	haiku	2	passed	0.98	0	0	traced visible, missed touching
+03-truncate-graphemes	grapheme-safe	opus	1	passed	0.92	0	0	never considered Unicode
+03-truncate-graphemes	grapheme-safe	opus	2	gaps_found	0.97	1	0	flagged NaN/negative max — NOT the grapheme edge
+03-truncate-graphemes	grapheme-safe	haiku	1	passed	0.98	0	0	missed grapheme edge
+03-truncate-graphemes	grapheme-safe	haiku	2	passed	0.98	0	0	missed grapheme edge

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "R1",
+    "text": "Apply a discount code to the cart total and show the new price",
+    "applicable": [
+      "boundary",
+      "precision",
+      "idempotency"
+    ],
+    "recall": [
+      {
+        "category": "precision",
+        "why": "rounding the discounted total to cents",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      },
+      {
+        "category": "idempotency",
+        "why": "applying the same code twice / stacking",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

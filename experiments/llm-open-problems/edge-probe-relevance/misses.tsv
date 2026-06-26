@@ -1,0 +1,10 @@
+slug	req	missed_category	why
+profile-pic-upload	R1	boundary	max file size limit
+profile-pic-upload	R1	encoding	filename normalization / unicode / type sniffing
+login-session	R1	boundary	behavior exactly at the expiry instant
+login-session	R1	concurrency	parallel logins / refresh race
+login-session	R2	idempotency	double logout is a no-op
+due-date-reminder	R1	boundary	timezone / due exactly at midnight
+due-date-reminder	R1	idempotency	do not double-send on retry
+pagination	R1	boundary	requesting a page past the end
+csv-export	R1	encoding	escaping commas/quotes/newlines/unicode in cells

@@ -1,0 +1,10 @@
+task	noninferable_edge	model	verdict	confidence	verdict_correct	caught_NI_edge	gap_note
+01-round-half-even	half-to-even tie	opus	passed	0.62	0	0	none (judged tie out of spec)
+01-round-half-even	half-to-even tie	sonnet	passed	0.82	0	0	none (no tie case in spec/tests)
+01-round-half-even	half-to-even tie	haiku	passed	0.92	0	0	none (all must_haves met)
+02-merge-intervals	touching merges	opus	passed	0.78	0	0	none (adjacency defensible)
+02-merge-intervals	touching merges	sonnet	gaps_found	0.72	1	1	touching intervals (s==last[1]) not merged
+02-merge-intervals	touching merges	haiku	passed	0.98	0	0	none (touching = non-overlap, "correct")
+03-truncate-graphemes	grapheme-safe	opus	passed	0.55	0	0	none (grapheme not in spec text; flagged filename hint)
+03-truncate-graphemes	grapheme-safe	sonnet	passed	0.82	0	0	none (spec says characters, ASCII tests pass)
+03-truncate-graphemes	grapheme-safe	haiku	passed	0.99	0	0	none (all must_haves satisfied)

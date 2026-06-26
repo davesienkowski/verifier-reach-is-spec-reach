@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "purpose": "Labelled ordering-edge requirements shared by E1-E4.",
+    "fields": {
+      "id": "stable id",
+      "statement": "the requirement text exactly as an author might write it",
+      "return_type": "declared/inferred output container type",
+      "value_type": "for containers: the element/value type (null for scalars)",
+      "order_relevant": "GROUND TRUTH: does the observable output order matter to a correct impl?",
+      "intended_order": "GROUND TRUTH: the order a correct impl must produce (null if irrelevant)",
+      "inferable": "GROUND TRUTH: can a competent engineer recover intended_order from the STATEMENT ALONE (no extra context)?",
+      "trap": "optional: why this row stresses a naive classifier"
+    },
+    "invariants": [
+      "order_relevant=false  => intended_order=null and inferable=null",
+      "order_relevant=true   => intended_order is a non-empty string and inferable is a boolean",
+      "if inferable=false then order_relevant must be true (only relevant orders can be non-inferable)"
+    ]
+  },
+  "requirements": [
+    { "id": "r01", "statement": "Return the unique tags applied to a document.", "return_type": "Set", "value_type": "string", "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r02", "statement": "Return a map from user id to that user's total score.", "return_type": "Map", "value_type": "number", "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r03", "statement": "Return whether every item passed validation.", "return_type": "boolean", "value_type": null, "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r04", "statement": "Return the number of currently active sessions.", "return_type": "number", "value_type": null, "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r05", "statement": "Return the search results ranked by relevance.", "return_type": "Array", "value_type": "Result", "order_relevant": true, "intended_order": "sorted by relevance descending", "inferable": true },
+    { "id": "r06", "statement": "Return the audit events in the order they occurred.", "return_type": "Array", "value_type": "Event", "order_relevant": true, "intended_order": "sorted by timestamp ascending (stable)", "inferable": true },
+    { "id": "r07", "statement": "Filter the array to items that are in stock, preserving input order.", "return_type": "Array", "value_type": "Item", "order_relevant": true, "intended_order": "stable / original input order", "inferable": true },
+    { "id": "r08", "statement": "Return the top 10 posts by upvotes.", "return_type": "Array", "value_type": "Post", "order_relevant": true, "intended_order": "sorted by upvotes descending", "inferable": true },
+    { "id": "r09", "statement": "Deduplicate the list of email addresses.", "return_type": "Array", "value_type": "string", "order_relevant": true, "intended_order": "stable / keep first occurrence in input order", "inferable": false, "trap": "order matters (which dup kept / sequence) but the statement names no order" },
+    { "id": "r10", "statement": "Return all error messages collected during parsing.", "return_type": "Array", "value_type": "string", "order_relevant": true, "intended_order": "encounter order (source position ascending)", "inferable": false, "trap": "callers read these top-to-bottom; encounter-order is expected but unstated" },
+    { "id": "r11", "statement": "Group orders by customer id.", "return_type": "Map", "value_type": "Array", "order_relevant": true, "intended_order": "outer map unordered; each inner array in input order", "inferable": false, "trap": "Map return type looks order-free, but the Array VALUES carry an order — naive 'Map => dismiss' is a FALSE DISMISS here" },
+    { "id": "r12", "statement": "Return the set of permissions granted to a role.", "return_type": "Set", "value_type": "string", "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r13", "statement": "Merge two already-sorted lists into one sorted list.", "return_type": "Array", "value_type": "number", "order_relevant": true, "intended_order": "sorted ascending; tie-break between equal elements unspecified", "inferable": false, "trap": "the SORT is inferable but the tie-break/stability between equal elements is not" },
+    { "id": "r14", "statement": "Return the effective configuration as an object.", "return_type": "object", "value_type": "any", "order_relevant": false, "intended_order": null, "inferable": null, "trap": "object key order is not semantically observable" },
+    { "id": "r15", "statement": "List the files in the given directory.", "return_type": "Array", "value_type": "string", "order_relevant": true, "intended_order": "unspecified (OS readdir order vs sorted is a real decision)", "inferable": false, "trap": "looks trivial; the order is a genuine undecided contract" },
+    { "id": "r16", "statement": "Return the median of the samples.", "return_type": "number", "value_type": null, "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r17", "statement": "Return the playlist tracks in shuffle order.", "return_type": "Array", "value_type": "Track", "order_relevant": true, "intended_order": "randomised / non-deterministic per call", "inferable": true, "trap": "order is relevant AND intentionally non-deterministic — a stability test would be wrong" },
+    { "id": "r18", "statement": "Return the distinct categories present, alphabetically.", "return_type": "Array", "value_type": "string", "order_relevant": true, "intended_order": "sorted by name ascending", "inferable": true },
+    { "id": "r19", "statement": "Return the histogram bucket counts.", "return_type": "Array", "value_type": "number", "order_relevant": true, "intended_order": "by bucket index ascending", "inferable": true },
+    { "id": "r20", "statement": "Return whether the user has the given permission.", "return_type": "boolean", "value_type": null, "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r21", "statement": "Return the leaderboard.", "return_type": "Array", "value_type": "Player", "order_relevant": true, "intended_order": "sorted by score descending; tie-break (e.g. earliest to reach score) unspecified", "inferable": false, "trap": "primary sort inferable, tie-break not — a defect hides in equal-score ordering" },
+    { "id": "r22", "statement": "Collect all warnings raised during the run.", "return_type": "Set", "value_type": "string", "order_relevant": false, "intended_order": null, "inferable": null },
+    { "id": "r23", "statement": "Return the path of nodes from A to B.", "return_type": "Array", "value_type": "Node", "order_relevant": true, "intended_order": "sequence-significant: A first, B last, in traversal order", "inferable": true },
+    { "id": "r24", "statement": "Return the document's tags as a comma-separated string.", "return_type": "string", "value_type": "char", "order_relevant": true, "intended_order": "deterministic tag order (e.g. sorted) so the string is stable", "inferable": false, "trap": "string is an order-bearing type so type-rule keeps it (safe), but the order derives from an upstream unordered set" }
+  ]
+}

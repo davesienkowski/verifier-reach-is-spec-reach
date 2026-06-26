@@ -1,0 +1,10 @@
+[
+  {
+    "id": "R1",
+    "text": "Let users search the list of products by name"
+  },
+  {
+    "id": "R2",
+    "text": "Filter the results by category and price range"
+  }
+]

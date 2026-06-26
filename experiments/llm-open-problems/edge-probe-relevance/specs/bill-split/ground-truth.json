@@ -1,0 +1,41 @@
+[
+  {
+    "id": "R1",
+    "text": "Divide the total bill by the number of people so each person sees what they owe",
+    "applicable": [
+      "boundary",
+      "empty",
+      "precision"
+    ],
+    "recall": [
+      {
+        "category": "precision",
+        "why": "leftover cent when total does not divide evenly",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "R2",
+    "text": "Round each share to two decimal places before showing it",
+    "applicable": [
+      "precision",
+      "boundary"
+    ],
+    "recall": [
+      {
+        "category": "precision",
+        "why": "rounding direction / who absorbs the remainder",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "R1",
+    "text": "Email a password reset link that works for one hour",
+    "applicable": [
+      "boundary",
+      "idempotency",
+      "concurrency"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "behavior exactly at the 1-hour expiry",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      },
+      {
+        "category": "idempotency",
+        "why": "link reused / multiple resets requested",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

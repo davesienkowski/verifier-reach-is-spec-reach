@@ -1,0 +1,10 @@
+[
+  {
+    "id": "R1",
+    "text": "Let the user upload a profile picture file"
+  },
+  {
+    "id": "R2",
+    "text": "Save the uploaded image and show it on their profile page"
+  }
+]

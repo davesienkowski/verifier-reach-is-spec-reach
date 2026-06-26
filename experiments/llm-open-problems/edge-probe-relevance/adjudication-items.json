@@ -1,0 +1,74 @@
+[
+  {
+    "id": "Q2",
+    "requirement": "Divide the total bill by the number of people so each person sees what they owe",
+    "category": "ordering",
+    "category_means": "When elements compare equal, is output order specified and stable"
+  },
+  {
+    "id": "Q6",
+    "requirement": "Let the user upload a profile picture file",
+    "category": "concurrency",
+    "category_means": "If interrupted or run in parallel, what is guaranteed"
+  },
+  {
+    "id": "Q9",
+    "requirement": "Filter the results by category and price range",
+    "category": "precision",
+    "category_means": "Where precision loss or overflow can occur, and the contract"
+  },
+  {
+    "id": "Q12",
+    "requirement": "Export the table of records to a CSV file the user can download",
+    "category": "ordering",
+    "category_means": "When elements compare equal, is output order specified and stable"
+  },
+  {
+    "id": "Q5",
+    "requirement": "Round each share to two decimal places before showing it",
+    "category": "ordering",
+    "category_means": "When elements compare equal, is output order specified and stable"
+  },
+  {
+    "id": "Q1",
+    "requirement": "Divide the total bill by the number of people so each person sees what they owe",
+    "category": "adjacency",
+    "category_means": "When two things are exactly equal or just touch, do they merge/collide/separate"
+  },
+  {
+    "id": "Q3",
+    "requirement": "Round each share to two decimal places before showing it",
+    "category": "adjacency",
+    "category_means": "When two things are exactly equal or just touch, do they merge/collide/separate"
+  },
+  {
+    "id": "Q11",
+    "requirement": "Export the table of records to a CSV file the user can download",
+    "category": "concurrency",
+    "category_means": "If interrupted or run in parallel, what is guaranteed"
+  },
+  {
+    "id": "Q8",
+    "requirement": "Filter the results by category and price range",
+    "category": "adjacency",
+    "category_means": "When two things are exactly equal or just touch, do they merge/collide/separate"
+  },
+  {
+    "id": "Q10",
+    "requirement": "Show the results in pages of twenty items each",
+    "category": "adjacency",
+    "category_means": "When two things are exactly equal or just touch, do they merge/collide/separate"
+  },
+  {
+    "id": "Q7",
+    "requirement": "Let users search the list of products by name",
+    "category": "adjacency",
+    "category_means": "When two things are exactly equal or just touch, do they merge/collide/separate"
+  },
+  {
+    "id": "Q4",
+    "requirement": "Round each share to two decimal places before showing it",
+    "category": "empty",
+    "category_means": "Result for empty, single-element, or null input"
+  }
+]

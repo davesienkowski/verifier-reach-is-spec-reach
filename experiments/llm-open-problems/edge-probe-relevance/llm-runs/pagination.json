@@ -1,0 +1,28 @@
+{
+  "slug": "pagination",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["collection", "numeric-range"],
+      "applicable_categories": ["boundary", "empty", "ordering"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "Total count that is an exact multiple of 20 (e.g. exactly 40 or 60): does the last full page exist alone, or is there an additional trailing empty page? And one step either side (39, 41 items) — the last page holds 19 then 1."
+        },
+        {
+          "category": "boundary",
+          "candidate": "Requesting a page number at or beyond the boundary: page 0 / page 1 indexing convention, and a page past the last one (e.g. page 5 when only 3 pages of data exist) — error, empty page, or clamp to last?"
+        },
+        {
+          "category": "empty",
+          "candidate": "Zero total results: is page 1 an empty page (200 with empty list) or an error/no-pages response? And the single-element case (1 result still occupies a valid first page)."
+        },
+        {
+          "category": "ordering",
+          "candidate": "When result items compare equal on the sort key, is their relative order specified and stable across separate page fetches? If unstable, the same item can be skipped or duplicated when paging from page N to N+1."
+        }
+      ]
+    }
+  ]
+}

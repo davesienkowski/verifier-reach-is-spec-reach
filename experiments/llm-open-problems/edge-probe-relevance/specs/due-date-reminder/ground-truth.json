@@ -1,0 +1,31 @@
+[
+  {
+    "id": "R1",
+    "text": "Send the user a reminder when their task is due",
+    "applicable": [
+      "boundary",
+      "idempotency",
+      "concurrency"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "timezone / due exactly at midnight",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      },
+      {
+        "category": "idempotency",
+        "why": "do not double-send on retry",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": false
+        }
+      }
+    ]
+  }
+]

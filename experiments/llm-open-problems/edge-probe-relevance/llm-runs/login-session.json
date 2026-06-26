@@ -1,0 +1,43 @@
+{
+  "slug": "login-session",
+  "requirements": [
+    {
+      "id": "R1",
+      "shapes": ["stateful", "numeric-range", "io"],
+      "applicable_categories": ["boundary", "precision", "idempotency", "concurrency"],
+      "edges": [
+        {
+          "category": "boundary",
+          "candidate": "A request made at exactly the session expiry timestamp, and one tick before and after it: is the request at T==expiry treated as still-valid or already-expired, and is the boundary contract inclusive or exclusive?"
+        },
+        {
+          "category": "precision",
+          "candidate": "Clock representation of the expiry instant: how are client/server clock skew, timezone/DST shifts, and wall-clock-vs-monotonic-clock differences handled, and what happens to the expiry timestamp for an unusually long 'remember me' session that approaches integer/epoch overflow?"
+        },
+        {
+          "category": "idempotency",
+          "candidate": "User logs in again while an unexpired session already exists (re-login or duplicate login from the same credentials): does it reuse the existing session, mint a second concurrent session, or invalidate the prior one?"
+        },
+        {
+          "category": "concurrency",
+          "candidate": "A request arrives in parallel with the session crossing its expiry boundary (or two near-simultaneous login attempts race to create a session): which outcome is guaranteed, and is there a window where the session is observed as both valid and expired?"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "shapes": ["stateful", "io"],
+      "applicable_categories": ["idempotency", "concurrency"],
+      "edges": [
+        {
+          "category": "idempotency",
+          "candidate": "User issues logout twice in a row, or logs out when there is no active session: does the second/no-op logout succeed silently, error, or have a different effect than the first?"
+        },
+        {
+          "category": "concurrency",
+          "candidate": "Logout fires while another in-flight request authenticated by the same session is still being processed (or logout on one device/tab while the session is also active elsewhere): is the in-flight request honored or rejected, and is logout-everywhere vs logout-this-session specified?"
+        }
+      ]
+    }
+  ]
+}

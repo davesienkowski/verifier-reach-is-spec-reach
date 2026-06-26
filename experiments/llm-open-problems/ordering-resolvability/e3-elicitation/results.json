@@ -1,0 +1,962 @@
+{
+  "pooled": {
+    "open": {
+      "n": 45,
+      "resolvedRate": 55.6,
+      "matchInferable": 75,
+      "matchNonInferable": 14.3
+    },
+    "forced": {
+      "n": 45,
+      "resolvedRate": 100,
+      "matchInferable": 83.3,
+      "matchNonInferable": 38.1
+    }
+  },
+  "perModel": {
+    "haiku": {
+      "open": {
+        "n": 15,
+        "resolvedRate": 53.3,
+        "matchInferable": 62.5,
+        "matchNonInferable": 14.3
+      },
+      "forced": {
+        "n": 15,
+        "resolvedRate": 100,
+        "matchInferable": 75,
+        "matchNonInferable": 42.9
+      }
+    },
+    "sonnet": {
+      "open": {
+        "n": 15,
+        "resolvedRate": 46.7,
+        "matchInferable": 75,
+        "matchNonInferable": 14.3
+      },
+      "forced": {
+        "n": 15,
+        "resolvedRate": 100,
+        "matchInferable": 87.5,
+        "matchNonInferable": 28.6
+      }
+    },
+    "opus": {
+      "open": {
+        "n": 15,
+        "resolvedRate": 66.7,
+        "matchInferable": 87.5,
+        "matchNonInferable": 14.3
+      },
+      "forced": {
+        "n": 15,
+        "resolvedRate": 100,
+        "matchInferable": 87.5,
+        "matchNonInferable": 42.9
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "r05",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r07",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r21",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r23",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r24",
+      "prompt": "open",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r07",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r10",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r21",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r23",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "prompt": "forced",
+      "model": "haiku",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r07",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r09",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r21",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r23",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "prompt": "open",
+      "model": "sonnet",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r07",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r21",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r23",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "prompt": "forced",
+      "model": "sonnet",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r07",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r10",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r21",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r23",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "prompt": "open",
+      "model": "opus",
+      "resolved": 0,
+      "choice": "hedge",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r05",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r06",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r07",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r08",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r09",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r10",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r11",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "stable-input",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r13",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r15",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "unspecified",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    },
+    {
+      "id": "r17",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "nondeterministic",
+      "truth": "nondeterministic",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r18",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r19",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": true,
+      "matches": 0
+    },
+    {
+      "id": "r21",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "sorted-by-field",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 1
+    },
+    {
+      "id": "r23",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "stable-input",
+      "inferable": true,
+      "matches": 1
+    },
+    {
+      "id": "r24",
+      "prompt": "forced",
+      "model": "opus",
+      "resolved": 1,
+      "choice": "stable-input",
+      "truth": "sorted-by-field",
+      "inferable": false,
+      "matches": 0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "R1",
+    "text": "Export the table of records to a CSV file the user can download",
+    "applicable": [
+      "encoding",
+      "empty"
+    ],
+    "recall": [
+      {
+        "category": "encoding",
+        "why": "escaping commas/quotes/newlines/unicode in cells",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      }
+    ]
+  }
+]

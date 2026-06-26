@@ -1,0 +1,12 @@
+slug	req	phantom_category
+bill-split	R1	adjacency
+bill-split	R1	ordering
+bill-split	R2	adjacency
+bill-split	R2	empty
+bill-split	R2	ordering
+profile-pic-upload	R1	concurrency
+search-filter	R1	adjacency
+search-filter	R2	adjacency
+search-filter	R2	precision
+pagination	R1	adjacency
+csv-export	R1	concurrency

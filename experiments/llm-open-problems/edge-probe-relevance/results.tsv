@@ -1,0 +1,12 @@
+slug	req	raised	applicable	tp	phantom	missed_applicable	precision
+bill-split	R1	5	3	3	2	0	0.60
+bill-split	R2	5	2	2	3	0	0.40
+profile-pic-upload	R1	1	3	0	1	3	0.00
+profile-pic-upload	R2	2	2	2	0	0	1.00
+search-filter	R1	4	3	3	1	0	0.75
+search-filter	R2	5	3	3	2	0	0.60
+login-session	R1	0	3	0	0	3	1.00
+login-session	R2	0	2	0	0	2	1.00
+due-date-reminder	R1	0	3	0	0	3	1.00
+pagination	R1	3	3	2	1	1	0.67
+csv-export	R1	1	2	0	1	2	0.00

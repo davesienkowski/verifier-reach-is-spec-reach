@@ -1,0 +1,14 @@
+# CONTAMINATED PILOT — inputs were the raw corpus files, whose spec.md carried a note naming
+# the non-inferable edge and whose defective.mjs carried "// Plausible-wrong: ... Fails held-out"
+# comments. Verifiers read the answer rather than inferring it. Kept only to quantify the leak's
+# effect vs the sanitized (blind) run. NOT the primary result.
+task	model	verdict	confidence	caught_NI_edge	note
+01-round-half-even	opus	passed	0.62	0	cited spec note to justify out-of-scope
+01-round-half-even	sonnet	passed	0.82	0	none
+01-round-half-even	haiku	passed	0.92	0	quoted code comment, still passed
+02-merge-intervals	opus	passed	0.55	0	adjacency defensible
+02-merge-intervals	sonnet	gaps_found	0.92	1	touching not merged
+02-merge-intervals	haiku	gaps_found	0.75	1	cited "non-inferable edge" framing
+03-truncate-graphemes	opus	passed	0.70	0	grapheme not in spec
+03-truncate-graphemes	sonnet	passed	0.72	0	none
+03-truncate-graphemes	haiku	gaps_found	0.72	1	quoted "Splits surrogate pairs" comment

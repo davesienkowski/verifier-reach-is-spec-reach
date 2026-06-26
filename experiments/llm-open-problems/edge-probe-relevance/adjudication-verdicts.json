@@ -1,0 +1,14 @@
+[
+  {"id":"Q2","applies":false,"reason":"Scalar division produces a single value with no collection; stable-equal-element ordering has nothing to order."},
+  {"id":"Q6","applies":true,"reason":"Parallel uploads, interrupted transfers, and partial files are real concurrency defects for file upload."},
+  {"id":"Q9","applies":true,"reason":"Price-range boundary comparisons can hit float precision (e.g. 19.99 vs 20.00), affecting which items match."},
+  {"id":"Q12","applies":true,"reason":"Rows with equal sort keys need a specified, stable order for reproducible CSV exports."},
+  {"id":"Q5","applies":false,"reason":"Rounding yields a single scalar per share; there is no collection whose equal-element order could vary."},
+  {"id":"Q1","applies":false,"reason":"Scalar division has no spatial/boundary touching; the real edge is divide-by-zero (empty), not adjacency."},
+  {"id":"Q3","applies":true,"reason":"Half-way values (e.g. .005) are exactly the tie boundary: round-half-up vs round-half-even is a real defect."},
+  {"id":"Q11","applies":true,"reason":"Exporting while records change or concurrent exports can produce an inconsistent snapshot."},
+  {"id":"Q8","applies":true,"reason":"Values exactly at price-range edges raise inclusive/exclusive boundary questions (does max match?)."},
+  {"id":"Q10","applies":true,"reason":"Items exactly at a page boundary or a count exactly divisible by twenty are real off-by-one/empty-last-page edges."},
+  {"id":"Q7","applies":false,"reason":"Text search is about match semantics (substring/exact), not equal-things-touching/merging; adjacency is over-reach here."},
+  {"id":"Q4","applies":true,"reason":"Null, NaN, or absent share input to the rounding step is a plausible empty/single-value defect."}
+]

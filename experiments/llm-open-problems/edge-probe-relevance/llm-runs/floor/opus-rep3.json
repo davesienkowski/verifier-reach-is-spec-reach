@@ -1,0 +1,50 @@
+{
+  "runs": [
+    {
+      "slug": "bill-split",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["boundary", "precision"] },
+        { "id": "R2", "applicable_categories": ["boundary", "precision"] }
+      ]
+    },
+    {
+      "slug": "profile-pic-upload",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["encoding", "concurrency"] },
+        { "id": "R2", "applicable_categories": ["idempotency", "concurrency"] }
+      ]
+    },
+    {
+      "slug": "search-filter",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["adjacency", "empty", "encoding", "ordering"] },
+        { "id": "R2", "applicable_categories": ["adjacency", "empty", "ordering", "boundary", "precision"] }
+      ]
+    },
+    {
+      "slug": "login-session",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["boundary", "precision", "idempotency", "concurrency"] },
+        { "id": "R2", "applicable_categories": ["idempotency", "concurrency"] }
+      ]
+    },
+    {
+      "slug": "due-date-reminder",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["boundary", "precision", "idempotency", "concurrency"] }
+      ]
+    },
+    {
+      "slug": "pagination",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["boundary", "precision", "adjacency", "empty", "ordering"] }
+      ]
+    },
+    {
+      "slug": "csv-export",
+      "requirements": [
+        { "id": "R1", "applicable_categories": ["adjacency", "empty", "encoding", "ordering", "concurrency"] }
+      ]
+    }
+  ]
+}

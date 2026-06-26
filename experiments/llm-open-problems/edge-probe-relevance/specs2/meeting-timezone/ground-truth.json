@@ -1,0 +1,22 @@
+[
+  {
+    "id": "R1",
+    "text": "Let users schedule a meeting and show the time to each attendee",
+    "applicable": [
+      "boundary",
+      "precision",
+      "concurrency"
+    ],
+    "recall": [
+      {
+        "category": "boundary",
+        "why": "DST transition / timezone / midnight rollover",
+        "persona": {
+          "vibe": true,
+          "mid": true,
+          "senior": true
+        }
+      }
+    ]
+  }
+]

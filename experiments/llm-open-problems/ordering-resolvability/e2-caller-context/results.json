@@ -1,0 +1,83 @@
+{
+  "n": 12,
+  "correct": 12,
+  "accuracy": 100,
+  "decided": 12,
+  "unknown": 0,
+  "falseDismiss": 0,
+  "safe": true,
+  "rows": [
+    {
+      "id": "c01",
+      "pred": "matters",
+      "truth": "matters",
+      "hit": true
+    },
+    {
+      "id": "c02",
+      "pred": "irrelevant",
+      "truth": "irrelevant",
+      "hit": true
+    },
+    {
+      "id": "c03",
+      "pred": "irrelevant",
+      "truth": "irrelevant",
+      "hit": true
+    },
+    {
+      "id": "c04",
+      "pred": "matters",
+      "truth": "matters",
+      "hit": true
+    },
+    {
+      "id": "c05",
+      "pred": "irrelevant",
+      "truth": "irrelevant",
+      "hit": true
+    },
+    {
+      "id": "c06",
+      "pred": "matters",
+      "truth": "matters",
+      "hit": true
+    },
+    {
+      "id": "c07",
+      "pred": "irrelevant",
+      "truth": "irrelevant",
+      "hit": true
+    },
+    {
+      "id": "c08",
+      "pred": "matters",
+      "truth": "matters",
+      "hit": true
+    },
+    {
+      "id": "c09",
+      "pred": "matters",
+      "truth": "matters",
+      "hit": true
+    },
+    {
+      "id": "c10",
+      "pred": "irrelevant",
+      "truth": "irrelevant",
+      "hit": true
+    },
+    {
+      "id": "c11",
+      "pred": "matters",
+      "truth": "matters",
+      "hit": true
+    },
+    {
+      "id": "c12",
+      "pred": "irrelevant",
+      "truth": "irrelevant",
+      "hit": true
+    }
+  ]
+}
