@@ -43,9 +43,10 @@ LLM verifier caught $0$ of $12$ verdicts, and was severely miscalibrated \emph{t
 (ECE $0.81$ on the clean non-inferable tasks versus $0.03$ on inferable tasks). The blind spot is
 \emph{model-invariant}: it reproduces across three model tiers and across several independent
 experiments, and a frontier model does no better than chance on it once a tie-break scoring artifact
-is removed. A powered replication ($n=121$
-verdicts, three model tiers) reproduces the blind spot at a $94\%$ confident-false-pass rate and shows
-that resolving the surfaced edge into the spec converts it to a $94\%$ catch; an independent,
+is removed. A powered replication ($n=210$
+verdicts, three model tiers, $5$ reps/cell, Wilson $95\%$ CIs) reproduces the blind spot at a
+$100\%$ $[94\text{--}100]$ confident-false-pass rate and shows that resolving the surfaced edge into
+the spec converts it to a $98\%$ $[91\text{--}100]$ catch; an independent,
 CI-committed $43$-item eval built by the framework's maintainer corroborates this and refines it---the
 fix is \emph{exogenous} tagging, not endogenous self-disconfirmation (which can even regress a correct
 verdict). We argue the binding constraint
@@ -58,8 +59,9 @@ mechanically-checkable constraints and, for judgment-tier constraints it cannot 
 (\code{insufficient\_spec}) rather than false-passes. We describe the unifying verification-tier
 abstraction, deployment via maintainer-reviewed merges, and---honestly---the residual class where the
 probe's recall gap leaves a held-out backstop irreplaceable. The contribution is a novel synthesis
-plus original measurement, not a net-new concept; the results are direction-finding on small samples
-plus a reproducible harness, not powered studies.
+plus original measurement, not a net-new concept; the headline blind-spot and fix are now powered with
+confidence intervals on a self-validating harness, while the calibration and cross-construct corroboration
+arms remain direction-finding on small samples.
 \end{abstract}
 
 % ===========================================================================
@@ -183,22 +185,74 @@ $75\%$, reliability $0\%$, byte-identical across reruns).
 \end{itemize}
 Re-running a bigger model never closes the gap; only spec reach does.
 
-\paragraph{A powered replication (n=121).}
+\paragraph{A powered replication (n=210).}
 We replicate the blind spot at scale on a purpose-built corpus (four self-validated non-inferable tasks
-$+$ one inferable control, $\times$ three tiers $\times$ three reps; $n=121$ verdicts; \code{analyze.mjs}
-recomputes every figure deterministically from the recorded \code{verdicts.tsv}). Each task is run under
-three spec states. (i) \emph{Narrow} (the omitted edge stripped, no abstain option): non-inferable
-confident-false-pass $=\mathbf{94\%}$ (opus $100\%$, sonnet $83\%$, haiku $100\%$; $n=32$)---the
-$n=12$ blind spot, reproduced and powered. (ii) \emph{Surfaced-resolved} (the omitted edge written into
-the spec as an explicit criterion): catch $=\mathbf{94\%}$, residual false-pass $6\%$ (opus/sonnet
-$100\%$, haiku $83\%$)---resolving the edge converts blind-spot into catch, mechanizing
-verifier-reach $=$ spec-reach. (iii) \emph{Surfaced-unresolved} (the \emph{real} compiled edge-probe tag
-appended, abstention available): $33\%$ false-pass, $47\%$ abstain, $19\%$ catch, tier-gated---opus
-$100\%$ honest (abstain$+$catch), sonnet $67\%$, haiku $33\%$ (flag-deaf). Two further results matter:
-the residual false-pass concentrates exactly on the one task the edge-probe's recall \emph{misses}
-(precision/tie: $0\%$ catch even when surfaced---the $\sim\!25\%$ recall gap where a held-out backstop
-is irreplaceable), and the inferable control shows $100\%$ catch with $0\%$ over-abstention---the real
-tagger, unlike a deliberately-false oracle, did not induce needless deferral.
+$+$ one inferable control, $\times$ three tiers $\times$ five reps; $n=210$ verdicts; \code{analyze.mjs}
+recomputes every figure deterministically from the recorded \code{verdicts.tsv}, reporting Wilson $95\%$
+confidence intervals). The harness now \emph{self-validates} non-inferability locally: \code{validate.mjs}
+confirms, for every non-inferable task, that the defective implementation passes the visible
+spec-derived tests yet fails a held-out edge test (the inferable control is exempt by design), so the
+non-inferable property is proven in-repo rather than only by reference. Each task is run under three spec
+states (Table~\ref{tab:t4}). \emph{Narrow} (the omitted edge stripped, no abstain option) reproduces the
+$n=12$ blind spot, powered: confident-false-pass $=\mathbf{100\%}$ $[94\text{--}100]$, uniform across
+tiers ($n=20$ each). \emph{Surfaced-resolved} (the omitted edge written into the spec as an explicit
+criterion) converts blind-spot into catch $=\mathbf{98\%}$ $[91\text{--}100]$, residual false-pass $2\%$
+$[0\text{--}9]$---mechanizing verifier-reach $=$ spec-reach. \emph{Surfaced-unresolved} (the \emph{real}
+compiled edge-probe tag appended, abstention available) drives $40\%$ $[29\text{--}53]$ honest abstention,
+tier-gated: opus $65\%$ $[43\text{--}82]$ honest (abstain$+$catch) $>$ sonnet $55\%$ $[34\text{--}74]$ $>$
+haiku $0\%$ $[0\text{--}16]$ (flag-deaf). The inferable control shows $100\%$ catch with $0\%$
+$[0\text{--}20]$ over-abstention---the real tagger, unlike a deliberately-false oracle, did not induce
+needless deferral. The run was adversarially audited at the transcript level: no hallucination, exact
+model pinning ($15$ per tier), an independent re-parser reproducing all $210$ verdicts, $0/45$
+cross-condition reads under per-condition isolated build directories, and $0$ code executions.
+
+\begin{table}[h]
+\centering
+\caption{Powered edge-probe-residual replication (canonical \code{v4}; $n=210$ verdicts: four
+non-inferable tasks $\times$ three tiers $\times$ five reps; Wilson $95\%$ CIs from \code{analyze.mjs}).
+The blind spot (narrow false-pass) and the fix (surfaced-resolved catch) are both near-saturated;
+surfacing the edge without resolving it converts false-passes into honest abstentions.}
+\label{tab:t4}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Condition (non-inferable tasks)} & $n$ & \textbf{false-pass} & \textbf{abstain} & \textbf{catch} \\
+\midrule
+Narrow (omitted edge stripped)            & 60 & $\mathbf{100\%}$ [94--100] & $0\%$ [0--6]    & $0\%$ [0--6] \\
+Surfaced-unresolved (real edge-probe tag) & 60 & $57\%$ [44--68]            & $40\%$ [29--53] & $3\%$ [1--11] \\
+Surfaced-resolved (edge written to spec)  & 60 & $2\%$ [0--9]               & $0\%$ [0--6]    & $\mathbf{98\%}$ [91--100] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The recall gap: an edge-probe miss is necessary but not sufficient.}
+Does the residual false-pass concentrate on the tasks the edge-probe's recall \emph{misses}? We widened
+the non-inferable set to seven tasks ($n=300$, identical protocol, adding two MISS-classified
+categories---null-vs-absent and idempotency/text-wrap) and re-estimated the gap. At the aggregate level
+there is \emph{no} clean separation: in surfaced-unresolved, edge-probe-HIT tasks false-pass at $73\%$
+$[59\text{--}84]$ and MISS tasks at $56\%$ $[41\text{--}69]$, CIs overlapping---and MISS is
+counterintuitively the \emph{lower} of the two. The per-task breakdown supplies the real finding.
+Idempotency---a complete miss, since the probe never fires for text-shape functions---is a genuine blind
+spot: $93\%$ $[70\text{--}99]$ false-pass surfaced-unresolved, $100\%$ in narrow. Precision/tie (a miss
+under the tagger version that scored it) is likewise a blind spot ($67\%$ $[42\text{--}85]$). But
+null-vs-absent, though an edge-probe miss, is \emph{caught} ($7\%$ $[1\text{--}30]$ false-pass; $0\%$ in
+narrow), because the null-property-preservation rule is already derivable from the spec's existing ``for
+each key not present in target'' language. The mechanism is therefore conditional: \textbf{an edge-probe
+miss is necessary but not sufficient for a verifier blind spot---the omitted edge must also be
+non-derivable from the spec's remaining obligations.} Two caveats bound the claim. The MISS categories
+were \emph{hand-selected} for edge-probe blindness, so this is a conditional/existence statement, not an
+unbiased population miss-rate; and the precision/tie miss label is tagger-version-dependent---the
+currently-deployed tagger would re-classify it as a hit, leaving two MISS categories. The held-out
+backstop stays irreplaceable precisely on the genuine blind spots within this set.
+
+\paragraph{Abstention is configuration-dependent.}
+Two further arms---identical model, fixtures, and ground truth, varying only the verifier's I/O and
+prompt wording---show that the \emph{absolute} abstention rate is a property of the setup, not the model.
+Reading the spec and code from files and replying in TSV roughly doubles abstention versus receiving them
+inline ($20\%$ $[12\text{--}32]\to40\%$ $[29\text{--}53]$, surfaced-unresolved); a forceful ``you MUST
+abstain'' instruction lifts it to $91\%$ $[83\text{--}95]$, dragging even flag-deaf haiku from $0\%$ to
+$80\%$. The blind spot and the fix are robust across every arm; the abstention rate is not. This
+reinforces the program guardrail: \textbf{abstention is not a primary mechanism}---its rate can be dialed
+by the harness, so the irreducible residual still needs a held-out backstop.
 
 \paragraph{Independent corroboration.}
 The replication above lived in a personal fork the framework's CI could not reach, so the maintainer
@@ -383,9 +437,9 @@ Abstention is therefore exogenous \emph{and} tier-pinned to a capable model. It 
 \emph{recalibrate}: ECE among the verdicts that stay decisive on non-inferable tasks nudges from
 $0.93$ to $0.98$. The deliverable is fewer decisions in the blind spot, not better-calibrated ones.
 These are direction-finding numbers ($n=27$). At scale the powered replication
-(\S\ref{sec:measurement}, $n=121$) shows the same shape with a \emph{real} edge-probe tag:
-surfaced-unresolved drives $47\%$ honest abstention, tier-gated (opus $100\%$ honest, haiku $0\%$), and
-surfaced-\emph{resolved} reaches $94\%$ catch; the independent CI-committed eval (Table~\ref{tab:t5})
+(\S\ref{sec:measurement}, $n=210$) shows the same shape with a \emph{real} edge-probe tag:
+surfaced-unresolved drives $40\%$ honest abstention, tier-gated (opus $65\%$ honest, haiku $0\%$), and
+surfaced-\emph{resolved} reaches $98\%$ catch; the independent CI-committed eval (Table~\ref{tab:t5})
 corroborates---exogenous tagging lifts spec-silent catch to $71$--$79\%$ and roughly thirds the
 confident-false-pass rate---and sharpens one caveat: endogenous \emph{self-disconfirmation} (as opposed
 to abstention) is not merely weak but can be \emph{harmful}, regressing a correct flag on the capable
@@ -494,8 +548,10 @@ requirements---is ours.
 
 \begin{itemize}[leftmargin=1.4em,itemsep=2pt]
 \item \textbf{Sample sizes; still not a large study.} Our calibration result is $n=12$; the powered
-replication is $n=121$ but over only four non-inferable tasks (so the $\sim\!25\%$ recall-gap estimate
-rests on $1/4$ categories) and three reps; the independent corroboration is $n\approx10$--$14$ per
+replication is $n=210$ ($5$ reps/cell, CIs reported) with a $n=300$ extension over seven non-inferable
+tasks for the recall-gap, but the MISS categories underlying that finding were hand-selected for
+edge-probe blindness---a conditional/existence claim, not an unbiased population miss-rate---and one
+MISS label is tagger-version-dependent; the independent corroboration is $n\approx10$--$14$ per
 class, two models, one run/seed. The spec-silent class has no ground-truth ``right answer'' without the
 spec, so even exogenous tagging cannot reach $100\%$ there, and the inferable/non-inferable label is
 itself model-dependent. Effects are large and monotone, but we report leads plus reproducible harnesses,
@@ -505,8 +561,10 @@ is a leaky abstraction: on prose alone the deterministic classifier under-fires
 ($\sim\!48\%$ of applicable edges missed on one corpus, worse on a terser second corpus), because
 terse prose yields no shape and therefore no edge. An
 LLM-in-the-loop classifier recovers most of this on a sonnet-class model or better (under-fire
-$\sim\!14\%$ at sonnet, near-zero at opus), but the weakest tier is high-variance and unreliable. On an edge the probe fails to \emph{name}, the verifier
-still catches $0\%$---so the pipeline is not a complete fix, and a held-out backstop remains necessary
+$\sim\!14\%$ at sonnet, near-zero at opus), but the weakest tier is high-variance and unreliable. On the
+genuine blind spots---edges the probe fails to \emph{name} \emph{and} that the spec's other obligations
+do not imply---the verifier still false-passes at $67$--$93\%$ even when the edge is surfaced unresolved;
+so the pipeline is not a complete fix, and a held-out backstop remains necessary
 for the residue.
 \item \textbf{Abstention is not free.} A false non-inferable tag induces over-abstention on real
 spec-determined bugs; the weakest tier is flag-deaf. Abstention quality is bounded by detector
@@ -534,8 +592,9 @@ verification fail closed, and keep the oracle for the edges no spec yet reaches.
 \paragraph{Reproducibility.} The paper, the reproducible experiments behind every headline number, and
 the design docs are collected in a public artifact repository:
 \url{https://github.com/davesienkowski/verifier-reach-is-spec-reach}. The
-$n=121$ replication ships its recorded \code{verdicts.tsv} and \code{analyze.mjs}, which recomputes
-every figure deterministically (no model calls). The independent corroboration is a committed, key-free,
+$n=210$ powered replication and its $n=300$ recall-gap extension ship their recorded \code{verdicts}
+TSVs, the \code{analyze.mjs} scorer that recomputes every figure with Wilson $95\%$ CIs (no model
+calls), and a \code{validate.mjs} gate that locally proves each task's non-inferability. The independent corroboration is a committed, key-free,
 CI-green artifact in the framework repository (\code{tests/verdict-eval/}, open-gsd/gsd-core\#1637):
 committed transcripts replayed by a deterministic judge, per-slice metrics locked as a golden
 fixture---anyone can re-run it. Every figure in this paper traces to a committed primary that
