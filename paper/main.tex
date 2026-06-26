@@ -530,7 +530,9 @@ measured where it works and where it does not. The honest bottom line is a synth
 measurement and a residual that still needs a held-out backstop---move defect-naming forward, make
 verification fail closed, and keep the oracle for the edges no spec yet reaches.
 
-\paragraph{Reproducibility.} The corpora, harnesses, and the merged feature PRs are public. The
+\paragraph{Reproducibility.} The paper, the reproducible experiments behind every headline number, and
+the design docs are collected in a public artifact repository:
+\url{https://github.com/davesienkowski/verifier-reach-is-spec-reach}. The
 $n=121$ replication ships its recorded \code{verdicts.tsv} and \code{analyze.mjs}, which recomputes
 every figure deterministically (no model calls). The independent corroboration is a committed, key-free,
 CI-green artifact in the framework repository (\code{tests/verdict-eval/}, open-gsd/gsd-core\#1637):
