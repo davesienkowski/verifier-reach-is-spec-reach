@@ -109,17 +109,20 @@ this work (see *Where this sits* below). What's new is:
    in a real coding agent. The pieces existed; this assembly is a fair contribution.
 
 **What it does *not* do.**
-- It is **not a complete fix.** If the probe fails to *name* an edge in the first place
-  (recall gap, roughly ~25% of categories in testing), the verifier still misses it — a
-  held-out backstop test remains necessary there. The pipeline narrows the blind spot; it does
-  not close it.
+- It is **not a complete fix.** An edge-probe *miss* is necessary but not sufficient for a blind
+  spot: on the genuine blind spots — an edge the probe doesn't *name* **and** that the spec's other
+  requirements don't imply — the verifier still false-passes at **67–93%** even when the edge is
+  surfaced unresolved. (The miss categories tested were hand-picked for probe-blindness, so this is
+  an existence finding, not a population rate.) A held-out backstop test remains necessary there;
+  the pipeline narrows the blind spot, it does not close it.
 - It needs a **capable verifier tier.** The abstention behavior was reliable on Sonnet-class
   models and degraded on Haiku (which tended to ignore the flag). Tie it to a weak tier and it
   weakens.
-- The headline numbers are **direction-finding, not a powered trial.** The 0/12-vs-100% and
-  ECE figures come from a single n=12 run on 3 tasks. A *powered* replication (n=121, three
-  models) reproduces the underlying blind spot at 94% — that's the result to lean on. The
-  abstention 100%→17% figure is n=27, single rep.
+- The headline calibration figures (0/12-vs-100%, ECE) are **direction-finding** — a single n=12
+  run on 3 tasks. The blind spot itself is now **powered**: a replication at n=210 (three tiers,
+  5 reps/cell, Wilson 95% CIs) reproduces it at **100% [94–100]** confident-false-pass, and the fix
+  converts it to a **98% [91–100]** catch — that's the result to lean on. The abstention 100%→17%
+  figure is still n=27, single rep.
 
 **Independent corroboration (not our experiments).**
 - **AbstentionBench** (arXiv:2506.09038) benchmarks LLM abstention on under-specified inputs
@@ -159,5 +162,4 @@ phrasing: *"my findings, contributed into GSD"* — not *"GSD's novel contributi
 
 *See also: [edge-probe-README.md](edge-probe-README.md) (one-screen overview),
 [edge-probe-family-summary.md](edge-probe-family-summary.md) (maintainer/changelog detail),
-[edge-probe-preprint-skeleton.md](edge-probe-preprint-skeleton.md) (the paper),
-[edge-probe-discord.md](edge-probe-discord.md) (public post).*
+[../paper/main.pdf](../paper/main.pdf) (the full arXiv paper).*

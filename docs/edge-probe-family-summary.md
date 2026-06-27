@@ -4,8 +4,9 @@
 **a verifier only catches what the spec named.** On a non-inferable-defect corpus a held-out
 test oracle caught 100% (3/3 tasks) while the LLM verifier caught 0/12 verdicts — and was
 miscalibrated specifically there (ECE 0.81 on non-inferable vs 0.03 on inferable). A powered
-replication (n=121, opus/sonnet/haiku) reproduced the blind spot at 94%. The program moves
-defect-naming forward (spec/plan time) and makes verification fail honestly.*
+replication (n=210, opus/sonnet/haiku, 5 reps/cell, Wilson 95% CIs) reproduced the blind spot at
+100% [94–100], and writing the edge into the spec converts it to a 98% [91–100] catch. The program
+moves defect-naming forward (spec/plan time) and makes verification fail honestly.*
 
 Last updated: 2026-06-26
 

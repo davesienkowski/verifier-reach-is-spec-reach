@@ -38,10 +38,13 @@ unflagged. This family moves defect-naming **forward** (to spec time) and makes 
 
 - **Headline (direction-finding, n=12):** held-out oracle **100%** vs LLM verifier **0/12** on
   non-inferable defects; calibration **ECE 0.81** there vs **0.03** on inferable tasks.
-- **Powered replication (n=121, 3 models):** blind spot reproduced at **94%** — the result to
-  lean on.
+- **Powered replication (n=210, 3 tiers, 5 reps/cell, Wilson 95% CIs):** blind spot reproduced at
+  **100% [94–100]** confident-false-pass; writing the edge into the spec converts it to a
+  **98% [91–100]** catch. The harness self-validates non-inferability locally (`validate.mjs`).
+  This is the result to lean on.
 - **Abstention (n=27, single rep):** confident false-pass **100% → 17%** with *exogenous*,
-  capable-tier abstention (self-judged abstention only reached 67%).
+  capable-tier abstention (self-judged abstention only reached 67%); the powered run shows the same
+  shape, tier-gated (opus > sonnet > haiku).
 - **Independent corroboration:** AbstentionBench (arXiv:2506.09038) — abstention on
   underspecification is unsolved and *scaling models doesn't help*; omission-decay
   (arXiv:2604.20911) — must-NOTs decay 73%→33% over a long session (4,416 trials).
@@ -53,8 +56,11 @@ clarify-before-coding, abstention-on-underspecification, the test-oracle-incompl
 principle — are prior art. New here: the *measurement* that verifier overconfidence
 concentrates on non-inferable requirements, and the *assembly* (shape-taxonomy pre-planning
 gate + `insufficient_spec` abstention at the verifier step, gated on an exogenous spec tag,
-shipped fail-closed). Not a complete fix: a recall gap (~25% of categories) leaves a held-out
-backstop necessary.
+shipped fail-closed). Not a complete fix: an edge-probe *miss* is necessary but not sufficient for a
+verifier blind spot — on the genuine blind spots (an edge the probe doesn't name **and** the spec's
+other obligations don't imply) the verifier still false-passes at **67–93%**, so a held-out backstop
+stays necessary. (The miss categories tested were hand-picked for probe-blindness — an existence
+finding, not a population rate.)
 
 ## Read next
 
@@ -62,9 +68,8 @@ backstop necessary.
 |---|---|
 | [edge-probe-user-feature.md](edge-probe-user-feature.md) | **Users** — what it does for you, plain language |
 | [edge-probe-family-summary.md](edge-probe-family-summary.md) | Maintainers — scoreboard, changelog, novelty positioning |
-| [edge-probe-preprint-skeleton.md](edge-probe-preprint-skeleton.md) | The arXiv paper draft |
-| [edge-probe-discord.md](edge-probe-discord.md) | Public/community post |
-| [n17-honest-verifier-issue.md](n17-honest-verifier-issue.md) | The honest-verifier feature spec (#1154) |
+| [../paper/main.pdf](../paper/main.pdf) | The full arXiv paper (source: [`../paper/main.tex`](../paper/main.tex)) |
+| [../paper/CORRECTIONS.md](../paper/CORRECTIONS.md) | The data-integrity ledger (every claim tightened, dropped, or restored) |
 
 ---
 
