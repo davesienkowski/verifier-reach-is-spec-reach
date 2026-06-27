@@ -19,12 +19,14 @@ general knowledge):
 |---|---|---|
 | Held-out oracle vs. LLM verifier | **100%** (3/3) caught vs. **0/12** | `experiments/llm-open-problems/noninferable-corpus/` |
 | Calibration | ECE **0.81** non-inferable vs. **0.03** inferable | same |
-| Powered replication (n=121, 3 tiers) | narrow blind-spot false-pass **94%** | `experiments/llm-open-problems/edge-probe-residual/` |
-| The fix works | resolving the surfaced edge → **94% catch** | same |
+| Powered replication (n=210, 3 tiers, 5 reps/cell, Wilson 95% CIs) | narrow blind-spot false-pass **100% [94–100]** | `experiments/llm-open-problems/edge-probe-residual/` |
+| The fix works | resolving the surfaced edge → **98% [91–100] catch** | same |
+| Recall gap (n=300 extension, 7 tasks) | an edge-probe **miss is necessary but not sufficient** for a blind spot | same |
 | Independent corroboration | maintainer-built CI eval, blind to ours | open-gsd/gsd-core#1637 |
 
 The blind spot is **model-invariant** (opus ≡ sonnet ≡ haiku; a frontier model does no better than
-chance), so the lever is *specification reach*, not verifier reasoning.
+chance), so the lever is *specification reach*, not verifier reasoning. The harness is now
+**self-validating**: `validate.mjs` proves each task is genuinely non-inferable locally.
 
 ## Reproduce
 
@@ -32,8 +34,10 @@ Each experiment ships its recorded verdict table and a deterministic scorer — 
 to reproduce the numbers**:
 
 ```bash
-cd experiments/llm-open-problems/edge-probe-residual && node analyze.mjs   # the n=121 result
-cd experiments/llm-open-problems/noninferable-corpus && node validate.mjs  # proves tasks are genuinely non-inferable
+cd experiments/llm-open-problems/edge-probe-residual
+node analyze.mjs verdicts.v4-faithful-read.tsv   # powered n=210 headline (Wilson 95% CIs)
+node analyze.mjs verdicts.v5-task-b.tsv          # n=300 recall-gap extension (7 tasks)
+node validate.mjs                                # proves each task is genuinely non-inferable (local self-validation)
 ```
 
 Build the paper (with [tectonic](https://tectonic-typesetting.github.io/), or any TeX Live):
@@ -60,8 +64,12 @@ abstention-under-underspecification, and test-oracle incompleteness are prior ar
 Related Work). What's new is the *measurement* that verifier overconfidence concentrates on
 non-inferable requirements, and the *assembly* of a shape-taxonomy spec-time gate + an
 exogenously-tagged `insufficient_spec` abstention, shipped fail-closed. It is **not a complete fix**:
-a recall residual (~25% of categories) leaves a held-out backstop necessary. Sample sizes are
-direction-finding-to-modest; see the paper's Limitations.
+on the genuine blind spots — edges the probe fails to *name* **and** that the spec's other obligations
+don't imply — the verifier still false-passes at **67–93%** even when the edge is surfaced unresolved,
+so a held-out backstop stays necessary. The headline blind-spot and fix are now **powered with
+confidence intervals** on a self-validating harness; the calibration and corroboration arms remain
+direction-finding. The recall-gap categories were hand-selected for edge-probe blindness (a
+conditional/existence claim, not an unbiased miss-rate). See the paper's Limitations.
 
 ## Attribution
 
