@@ -336,6 +336,16 @@ stage is what the artifact silently got wrong or left out---never what it left v
 the fix is always to widen or reconcile the artifact upstream, never to deploy a stronger reader
 downstream.
 
+This principle is not new; it is a stage-wise restatement of two long-standing ones. The
+\emph{test-oracle problem}~\cite{oracleproblem} holds that an automated oracle is only as complete as
+the specification it encodes and is otherwise irreducibly incomplete; in information-theoretic terms
+the \emph{data-processing inequality}~\cite{coverthomas} says no downstream reader can recover
+correctness information its input never carried. What we contribute is not the principle but
+\emph{where it bites and what to do about it} in an LLM coding pipeline: the measurement that a
+goal-backward verifier's overconfidence localizes to the non-inferable regime
+(\S\ref{sec:measurement}), and the spec-time intervention that moves the artifact boundary so the
+obligation becomes checkable (\S\ref{sec:system}).
+
 \paragraph{Connections to engineering folklore.} Two well-worn observations sharpen the framing.
 Goodhart's law---when a measure becomes a target, it ceases to be a good measure---predicts the
 failure precisely: the moment an agent loop optimizes for ``the verifier returns pass,'' the verdict
@@ -537,9 +547,13 @@ our model-invariant blind spot. Our distinction is a coding-agent verify-phase a
 \paragraph{LLM-as-judge weakness.}
 Studies of verification for code generation report that homogeneous or limited test suites let subtle
 faults go undetected and recommend held-out tests~\cite{rethinkingverification}; surveys catalog
-LLM-as-judge weaknesses~\cite{llmjudgesurvey}. These corroborate verifier overconfidence; the
-spec-reach framing---and the specific claim that overconfidence \emph{concentrates} on non-inferable
-requirements---is ours.
+LLM-as-judge weaknesses~\cite{llmjudgesurvey}; and recent work finds LLM verifiers systematically
+misjudge code-against-specification conformance~\cite{verifyfailures}---but in the \emph{opposite}
+direction from ours, over-rejecting correct code rather than confidently passing defective code. These
+establish verifier unreliability and overconfidence as known phenomena. Ours is the narrower,
+complementary claim: that the confident \emph{false-pass} concentrates specifically on the
+\emph{non-inferable} regime (the $0.81$-versus-$0.03$ calibration split), is model-invariant, and is
+closed not by a stronger judge but by moving defect-naming to spec time.
 
 % ===========================================================================
 \section{Limitations}
