@@ -66,6 +66,7 @@ finding, not a population rate.)
 
 | File | For whom |
 |---|---|
+| [edge-probe-plain-english.md](edge-probe-plain-english.md) | **Anyone** — the problem in plain English, zero background needed |
 | [edge-probe-user-feature.md](edge-probe-user-feature.md) | **Users** — what it does for you, plain language |
 | [edge-probe-family-summary.md](edge-probe-family-summary.md) | Maintainers — scoreboard, changelog, novelty positioning |
 | [../paper/main.pdf](../paper/main.pdf) | The full arXiv paper (source: [`../paper/main.tex`](../paper/main.tex)) |
