@@ -1,0 +1,797 @@
+[
+  {
+    "cell_id": 0,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "narrow",
+    "rep": 1,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 1,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "narrow",
+    "rep": 2,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 2,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "narrow",
+    "rep": 3,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 3,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "narrow",
+    "rep": 4,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 4,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "narrow",
+    "rep": 5,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 5,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "narrow",
+    "rep": 1,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 6,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "narrow",
+    "rep": 2,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 7,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "narrow",
+    "rep": 3,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 8,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "narrow",
+    "rep": 4,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 9,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "narrow",
+    "rep": 5,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 10,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "narrow",
+    "rep": 1,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 11,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "narrow",
+    "rep": 2,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 12,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "narrow",
+    "rep": 3,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 13,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "narrow",
+    "rep": 4,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 14,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "narrow",
+    "rep": 5,
+    "bd_path": "BD_narrow",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` or `gaps_found`. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__narrow.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 15,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-unresolved",
+    "rep": 1,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 16,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-unresolved",
+    "rep": 2,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 17,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-unresolved",
+    "rep": 3,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 18,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-unresolved",
+    "rep": 4,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 19,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-unresolved",
+    "rep": 5,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 20,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-unresolved",
+    "rep": 1,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 21,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-unresolved",
+    "rep": 2,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 22,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-unresolved",
+    "rep": 3,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 23,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-unresolved",
+    "rep": 4,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 24,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-unresolved",
+    "rep": 5,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 25,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-unresolved",
+    "rep": 1,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 26,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-unresolved",
+    "rep": 2,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 27,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-unresolved",
+    "rep": 3,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 28,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-unresolved",
+    "rep": 4,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 29,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-unresolved",
+    "rep": 5,
+    "bd_path": "BD_surfaced-unresolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec.\nVerdicts: `passed` · `gaps_found` · `insufficient_spec` (spec does not determine behavior on an edge that could change correctness — cannot responsibly rule). Each spec lists \"UNRESOLVED edges\"; if such an edge could change observed behavior and the spec doesn't decide it, `insufficient_spec` is appropriate. Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t5,t6,t7]: Read BD/specs/T__surfaced-unresolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 30,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-resolved",
+    "rep": 1,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 31,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-resolved",
+    "rep": 2,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 32,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-resolved",
+    "rep": 3,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 33,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-resolved",
+    "rep": 4,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 34,
+    "model": "opus",
+    "model_id": "claude-opus-4-8",
+    "condition": "surfaced-resolved",
+    "rep": 5,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 35,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-resolved",
+    "rep": 1,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 36,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-resolved",
+    "rep": 2,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 37,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-resolved",
+    "rep": 3,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 38,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-resolved",
+    "rep": 4,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 39,
+    "model": "sonnet",
+    "model_id": "claude-sonnet-4-6",
+    "condition": "surfaced-resolved",
+    "rep": 5,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 40,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-resolved",
+    "rep": 1,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 41,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-resolved",
+    "rep": 2,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 42,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-resolved",
+    "rep": 3,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 43,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-resolved",
+    "rep": 4,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  },
+  {
+    "cell_id": 44,
+    "model": "haiku",
+    "model_id": "claude-haiku-4-5-20251001",
+    "condition": "surfaced-resolved",
+    "rep": 5,
+    "bd_path": "BD_surfaced-resolved",
+    "tasks": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t6",
+      "t7"
+    ],
+    "prompt": "You are a GSD goal-backward verifier. By INSPECTION ONLY (do NOT execute code), decide for each task whether the code satisfies EVERY must_have in its spec (each spec includes an explicit resolved acceptance criterion — check the code against it).\nVerdicts: `passed` (satisfies all must_haves) or `gaps_found` (violates/omits a must_have). Confidence in [0,1]. Treat each task INDEPENDENT. Spec and code with same Tn prefix are a matched pair.\nFor each T in [t1,t2,t3,t4,t6,t7]: Read BD/specs/T__surfaced-resolved.md and BD/code/T.mjs.\nReturn ONLY a TSV, one row per task: task\tverdict\tconfidence\tone-line note"
+  }
+]
