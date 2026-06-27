@@ -58,6 +58,38 @@ Two payoffs, both measured:
   model doesn't *feel* unsure (it's blind, not hesitant). The "I can't verify this" has to be
   triggered from *outside* (the edge-probe tag), which is exactly how it's wired.
 
+## If you run GSD on `auto`
+
+Autonomous mode (`/gsd-autonomous`, or `--auto` chains) is where this matters **most** — because you
+leave the per-step loop, and a confidently-wrong green is far more dangerous when no human is reviewing
+each phase. Unguarded, the loop would build the next phase on top of a silent defect. Two documented
+behaviors keep auto runs **fail-closed instead of fail-silent**:
+
+- **Unanswered edges auto-*backstop*, never auto-dismiss.** With no human there to answer the
+  edge-probe at spec time, GSD records each surfaced edge as a held-out backstop / non-inferable tag
+  rather than guessing it away — *"never auto-dismiss; a wrong dismissal is the exact silent failure
+  being eliminated."* The edge stays named and flagged instead of vanishing.
+- **The honest verifier turns a blind spot into a checkpoint.** When verify-phase hits one of those
+  tagged truths it cannot confirm, it abstains (`insufficient_spec → human_needed`). Autonomous mode
+  treats `human_needed` as a stop-and-surface: it **defers the phase and hands you a resume pointer**
+  (`/gsd-verify-work N`) instead of advancing. The loop pauses *exactly* where the spec was
+  under-specified, rather than shipping past it.
+
+So for auto users the value flips from "answer a few questions up front" to **"the run stops itself at
+the spots it can't honestly verify, instead of silently building past them."** Treat those
+`human_needed` pauses as the feature working — each one marks a real blind spot the run refused to fake.
+
+Two practical notes:
+
+- **Seed the edges only *you* know, before you launch.** Auto-backstop *flags* an edge; it can't
+  supply your domain answer. If you already know a behavior matters (a specific rounding rule, a
+  tie-break, an encoding choice), put it in the spec before the run — otherwise you'll clear it as a
+  `human_needed` checkpoint afterward.
+- **More pauses on a gappy spec is correct, not broken.** A fully hands-free run over a spec with many
+  non-inferable edges will surface more checkpoints. That is fail-closed doing its job; the
+  alternative — a confident green you never asked for, propagated through later phases — is the exact
+  outcome this whole family exists to prevent.
+
 ## Honest limits — deploy it with eyes open
 
 - **Not a complete fix.** If the probe fails to *name* an edge and nothing else in the spec implies
