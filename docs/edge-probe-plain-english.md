@@ -131,6 +131,15 @@ Now the honest part — because the whole point of this work is **not** oversell
 
 ---
 
+## Why this should matter to you
+
+You probably don't write software — but you depend on a lot of it, and more of it every month is
+written *and* checked by AI. When that automated green check can be confidently wrong, a real bug can
+reach you with nothing flagging it: a wrong total, a mangled name, a dropped case in something you rely
+on. The point of this work is to make the green check **mean something** — to make the checker admit
+what it didn't actually check instead of quietly waving it through. You don't have to understand the
+code for that to be worth caring about.
+
 ## The one thing to take away
 
 > **An automated checker can only catch the mistakes your instructions named.** When you're tempted

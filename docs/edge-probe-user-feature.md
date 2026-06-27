@@ -93,6 +93,16 @@ refuses to fake-pass what the spec couldn't determine.
 
 ---
 
+## Why it's worth your time
+
+The bug class this targets is the one you *can't* catch later. A normal bug trips something — a test, a
+type error, a failing build — that points at it. A non-inferable bug points at nothing: the spec never
+pinned the behavior, so every test derived from that spec agrees the wrong answer is fine. It sails
+through verification and ships. The cost to prevent it is a few minutes answering edge-case questions
+at spec time — and in the powered study, naming the edge in one sentence flipped a near-certain miss
+(**~100%**) into a near-certain catch (**~98%**). That's the trade: minutes up front against a bug
+you'd otherwise meet in production, or never.
+
 ## The honest part (what this is and isn't)
 
 You asked to be kept honest, so here it is straight:

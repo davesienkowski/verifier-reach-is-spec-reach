@@ -28,6 +28,14 @@ The blind spot is **model-invariant** (opus ≡ sonnet ≡ haiku; a frontier mod
 chance), so the lever is *specification reach*, not verifier reasoning. The harness is now
 **self-validating**: `validate.mjs` proves each task is genuinely non-inferable locally.
 
+## Why this matters
+
+The blind spot lands where it hurts most: on requirements the spec left implicit, **no test catches
+the bug** — the test suite derives from the same incomplete spec — so it slips past CI and surfaces in
+production, or never visibly at all. It is the most expensive bug class to find late, and the one an
+LLM verifier is most confidently wrong about. The cheapest place to close the gap is at spec time, by
+naming the edge before any code exists.
+
 ## Reproduce
 
 Each experiment ships its recorded verdict table and a deterministic scorer — **no model calls needed

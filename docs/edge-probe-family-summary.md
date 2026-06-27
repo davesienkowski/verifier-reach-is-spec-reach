@@ -12,6 +12,15 @@ Last updated: 2026-06-26
 
 ---
 
+## Why this is worth carrying
+
+This targets a *measured*, independently-corroborated failure mode, not a speculative nicety: the
+verifier's confident-green concentrates on under-specified requirements, where no test backstops it.
+The intervention is cheap (a few spec-time questions), fails closed (it adds no new way to silently
+pass), and is grounded in a powered study (n=210, confidence ranges) plus an external benchmark that
+independently finds bigger models don't rescue abstention on under-specification. Net: it cuts false
+confidence in CI rather than adding noise — high leverage, low maintenance.
+
 ## Scoreboard
 
 | # | What | Status | User-visible surface |

@@ -23,6 +23,14 @@ unflagged. This family moves defect-naming **forward** (to spec time) and makes 
 - **Verify time** — the verifier returns **`insufficient_spec`** and asks for a held-out test
   on requirements the spec can't determine, instead of stamping a confident green over them.
 
+## Why this matters
+
+The blind spot is not a cosmetic edge case. It lands on the requirements your spec left implicit — so
+**no test catches it** (the tests come from the same incomplete spec), it slips past CI, and it
+surfaces in production or never visibly at all. That makes it the most expensive bug class to find
+late, and the one an LLM verifier is most confidently wrong about. Naming the edge at spec time, before
+any code exists, is the cheapest point in the whole pipeline to close it.
+
 ## What ships where
 
 | # / PR | What | Status |
@@ -68,6 +76,7 @@ finding, not a population rate.)
 |---|---|
 | [edge-probe-plain-english.md](edge-probe-plain-english.md) | **Anyone** — the problem in plain English, zero background needed |
 | [edge-probe-user-feature.md](edge-probe-user-feature.md) | **Users** — what it does for you, plain language |
+| [edge-probe-for-gsd-users.md](edge-probe-for-gsd-users.md) | **GSD-Core users** — why it's worth turning on (the value, in your terms) |
 | [edge-probe-family-summary.md](edge-probe-family-summary.md) | Maintainers — scoreboard, changelog, novelty positioning |
 | [../paper/main.pdf](../paper/main.pdf) | The full arXiv paper (source: [`../paper/main.tex`](../paper/main.tex)) |
 | [../paper/CORRECTIONS.md](../paper/CORRECTIONS.md) | The data-integrity ledger (every claim tightened, dropped, or restored) |
