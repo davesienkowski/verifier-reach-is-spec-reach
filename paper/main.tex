@@ -11,6 +11,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\setlength{\emergencystretch}{2em} % absorb small prose overfulls at camera-ready
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{array}
@@ -29,7 +30,7 @@
 \title{\textbf{Verifier Reach Is Spec Reach:}\\[2pt]
        Moving Defect-Naming Forward in Agentic Coding Pipelines}
 \author{David Sienkowski\,\orcidlink{0009-0007-5143-8925}\\\small research and measurements}
-\date{Draft, 2026-06-26 --- experience/position paper}
+\date{}
 
 \begin{document}
 \maketitle
@@ -286,6 +287,7 @@ a substitute for it.
 Recall $=$ defect-catch rate per class; CFP $=$ confident-false-pass on the spec-silent class.
 figures from open-gsd/gsd-core\#1637 (\code{tests/verdict-eval/}).}
 \label{tab:t5}
+\small\setlength{\tabcolsep}{4pt}%
 \begin{tabular}{llccccc}
 \toprule
 model & mode & inferable & domain-know. & spec-silent & spec-silent CFP & clean prec. \\
@@ -346,6 +348,43 @@ goal-backward verifier's overconfidence localizes to the non-inferable regime
 (\S\ref{sec:measurement}), and the spec-time intervention that moves the artifact boundary so the
 obligation becomes checkable (\S\ref{sec:system}).
 
+\paragraph{The seam one stage earlier: \code{must\_haves} fidelity.}
+The same reach failure appears one artifact \emph{upstream} of the verifier. A verifier reads the
+\code{must\_haves} contract, but that contract is itself a lossy decomposition of the requirement, and
+the decomposition can drop or invert intent the requirement \emph{did} name. We measure the
+requirement$\to$\code{must\_haves} seam with a \emph{back-translation} probe: hand a fresh, isolated
+model \emph{only} a requirement's decomposed \code{must\_haves} and have it reconstruct the intent, then
+compare against the original. On a real $48$-requirement product specification, intent survived the
+decomposition \emph{iff} it was explicitly encoded as a rule; holistic intent left as pure mechanism
+drifted---and in the most dangerous case \emph{inverted}. A trauma-informed ``loss-proof momentum''
+requirement, decomposed to the mechanism ``a counter that only holds or rises,'' back-translated
+(blinded, multi-grader Fleiss $\kappa=0.805$, model-invariant) into an engagement \emph{streak}---the
+exact punitive-gamification anti-goal the product's design principles explicitly forbid. A
+$100\%$-covered contract that names the wrong thing is the verifier blind spot displaced one stage up,
+and its fix has the same shape: route the holistic obligation to a judgment-tier \code{must\_have}
+rather than a denser mechanism. Back-translation is the cheap detector for it---the \emph{fidelity}
+counterpart to the edge-probe's completeness.
+
+\paragraph{A bounding negative result: do not author through a verifiable IR.}
+A natural stronger remedy would prevent the lossy decomposition at its source: have the model author
+through a more-\emph{verifiable} intermediate representation---types, property tests, and an explicit
+enumeration of the legitimate domain referents---from which the contract and code are compiled, so
+intent rides a checkable artifact rather than prose mechanism. On the one dangerous case this works: an
+intent-aware IR that enumerates the real-world drivers of progress (versus the inert anti-goal signal)
+back-translates \textsc{faithful}; an ablation localizes the recovery to the \emph{domain vocabulary},
+not identifier names or structure, and it is author-invariant across three independent authors
+($\kappa=0.861$). But a \emph{pre-registered} corpus census asks whether the layer is worth building,
+and answers no. Across the $48$-requirement spec, no requirement beyond the discovery case itself
+exhibits the signature the IR repairs---a holistic stance decomposed to pure mechanism that mechanically
+coincides with a named prohibition. Sixteen holistic requirements already route their stance to an
+encoded or judgment-tier \code{must\_have} (the fix already in place), and three are rule-encodable
+numeric. The defect a verifiable IR would repair is a \emph{rare spec-hygiene lapse that disciplined
+specs design out}, not a populous class; so the general answer is the cheap fidelity probe plus the
+existing judgment-tier routing, not an IR-authoring layer---which would, moreover, grow an
+informally-specified type/proof language of its own, the accidental-language failure mode we decline
+elsewhere. The lesson is the one this paper repeats: repair the artifact; do not build a heavier reader
+\emph{or} a heavier author.
+
 \paragraph{Connections to engineering folklore.} Two well-worn observations sharpen the framing.
 Goodhart's law---when a measure becomes a target, it ceases to be a good measure---predicts the
 failure precisely: the moment an agent loop optimizes for ``the verifier returns pass,'' the verdict
@@ -403,7 +442,7 @@ concurrency), raises the edges that the requirement's shape implies. Each raised
 disposition: \emph{specify} (becomes an acceptance criterion), \emph{backstop} (a held-out test
 stands in; the edge is tagged non-inferable), \emph{dismiss} (with a recorded reason), or
 \emph{defer} (an explicit planner assumption). The category taxonomy is sound; the binding weakness
-is the prose$\to$shape classifier (\S\ref{sec:limitations}). The instrument is most distinct from
+is the prose-to-shape classifier (\S\ref{sec:limitations}). The instrument is most distinct from
 sampling-based clarification (\S\ref{sec:related}) in that it emits a \emph{persistent, verifiable
 contract} rather than a one-shot question.
 
@@ -461,6 +500,7 @@ should not ship as a verification control.
 \caption{Confident false-pass on the non-inferable blind spot, by abstention condition
 ($n=27$, 1 rep).}
 \label{tab:t3}
+\small\setlength{\tabcolsep}{4pt}%
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Condition} & $n$ & \textbf{false-pass} & \textbf{abstain (honest)} & \textbf{mean conf. of false-pass} \\
@@ -586,6 +626,11 @@ precision and model tier.
 \item \textbf{Single ecosystem.} All deployment evidence is from one framework and one maintainer.
 Any cross-model or cross-family verifier recommendation is \emph{unvalidated}---every verifier
 subagent in these experiments was from a single model family.
+\item \textbf{Fidelity seam is single-product.} The requirement$\to$\code{must\_haves} back-translation
+result and the verifiable-IR census both come from one $48$-requirement specification; the dangerous
+inversion is a single robust exemplar (blinded $\kappa=0.805$, author-invariant $\kappa=0.861$), and the
+census's ``rare defect'' conclusion is an inference from one disciplined spec, not a measured
+cross-product frequency. It bounds \emph{what to build}, not a population rate.
 \item \textbf{Model-version sensitivity.} Abstention is tier-gated and confidence-while-wrong varies
 by tier; results may shift across model generations.
 \end{itemize}
@@ -619,6 +664,11 @@ and confidence intervals, a camera-ready refinement rather than an open question
 The research thesis and measurements are the author's own work. The pipeline features ship in the
 open-source GSD-Core project and are community contributions; merges and review were performed by the
 project's maintainers, whose adversarial review materially improved the design.
+
+Consistent with this paper's own thesis, we disclose its method: generative AI (large language models)
+assisted drafting, analysis, and the experimental harness. The author reviewed and verified all
+content---every reported figure traces to a committed primary that recomputes deterministically---and
+takes full responsibility for it. No AI system is an author.
 
 \bibliographystyle{plain}
 \bibliography{refs}
