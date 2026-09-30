@@ -10,3 +10,5 @@
 *.fdb_latexmk
 # node
 node_modules/
+# arXiv submission bundle (regenerated from paper/main.tex + refs.bib)
+paper/arxiv-submission.tar.gz

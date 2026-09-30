@@ -1,0 +1,9 @@
+# Keep LF in the repo and in working trees, even when a Windows-side tool
+# rewrites files with CRLF (that rewrite once showed 305 files as modified).
+* text=auto eol=lf
+
+# Binary artifacts: never convert or diff as text.
+*.pdf binary
+*.tar.gz binary
+*.png binary
+*.jpg binary
